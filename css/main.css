@@ -192,7 +192,6 @@ input[type="radio"]:checked + .switch {
 	margin: 5px;
 	margin-bottom: 10px;
 	display: block;
-	transition: all 50ms ease;
 }
 
 .post .title {
