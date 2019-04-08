@@ -24,11 +24,37 @@
 	</style>
 	
 		<center>
-			<div class="image-wrapper" style="margin-top: 120px; cursor: pointer;" onmousedown="navTo('index.html');">
-				<img src="img/mexurylogo.png" style="cursor: pointer;"/>
-			</div>
 			<div id="wrapper">
-				<span id="theme" style="margin-top: -160px;">Theme</span>
+				<div class="image-wrapper" style="margin-top: -120px;">
+					<img src="img/mexurylogo.png" style="cursor: pointer;"/>
+				</div>
+				<div class="box-wrapper">
+					<div class="box" onmousedown="navTo('index.html');">
+						<i class="fas fa-home"></i>
+						<p>Home</p>
+					</div>
+					<div class="box" onmousedown="navTo('https://github.com/Mexury');">
+						<i class="fab fa-github"></i>
+						<p>Github</p>
+					</div>
+					<div class="box" onmousedown="discord();">
+						<i class="fab fa-discord"></i>
+						<p>Discord</p>
+					</div>
+					<div class="box" onmousedown="navTo('https://steamcommunity.com/id/Mexury/');">
+						<i class="fab fa-steam"></i>
+						<p>Steam</p>
+					</div>
+					<div class="box" id="unavailable">
+						<i class="fas fa-portrait"></i>
+						<p>Portfolio</p>
+					</div>
+				</div>
+				
+				<div style="margin-bottom: 20px;">
+					<iframe src="blog/index.html" style="height: 1100px; width: 80vw; border: 0; outline: 0;"></iframe>
+				</div>
+				<span id="theme">Theme</span>
 				<form name="themeForm" style="margin-bottom: 30px;">
 					<input type="radio" name="s3" id="s3On" value="1" hidden checked>
 					<label for="s3On" class="switch switch--light">Light</label>
@@ -36,11 +62,6 @@
 					<input type="radio" name="s3" id="s3Off" value="0" hidden>
 					<label for="s3Off" class="switch switch--dark">Dark</label>
 				</form>
-				
-				
-				<div>
-					<iframe src="blog/index.html" style="height: 700px; width: 80vw; border: 0; outline: 0;"></iframe>
-				</div>
 				<div class="links" id="links">
 					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
 				</div>
@@ -134,6 +155,7 @@ function getColorMode() {
 		document.getElementById('s3Off').checked = true;
 	}
 	
+	$(".box.active").css("background","#40bced");
 	$("#unavailable").css("background","#e25a61");
 	
 	setTimeout(function () {

@@ -71,6 +71,15 @@ body {
 	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
 }
 
+.box.active {
+	background: #e25a61;
+	color: #ffffff;
+	transform: translate(0,-6px);
+	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
+	cursor: default;
+}
+.box.active p, .box.active i { cursor: default; }
+
 #unavailable {
 	background: #e25a61;
 	color: #ffffff;
