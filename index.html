@@ -52,6 +52,11 @@
 						</br>You will be able to find all of the sourcecode in the github linked above.</p>
 					</div>
 				</div>
+				
+				<div id="hidden">
+					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
+					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
+				</div>
 			
 				<span id="theme">Theme</span>
 				<form name="themeForm" style="margin-bottom: 30px;">
@@ -117,6 +122,7 @@ var rad = document.themeForm.s3;
     }
 
 function setColorMode(mode) {
+	
 	if (mode == 'light') {
 		document.cookie = "colormode=light; expires=Thu, 28 Feb 2030 12:00:00 UTC";
 	} else
@@ -133,7 +139,6 @@ function getColorMode() {
 	body.style.background = "#f9f9f9";
 	$(".box").css("transition","all 0ms ease");
 	$(".post").css("transition","all 0ms ease");
-	$(".box").css("background","#f2f2f2");
 
 	var mode = document.cookie;
 	if (getCookie('colormode') == 'light') {
@@ -148,22 +153,20 @@ function getColorMode() {
 	} else
 	if (getCookie('colormode') == 'dark') {
 		body.style.color = "#f9f9f9";
-		body.style.background = "#3a3a3a";
-		$(".box").css("background","#212121");
-		$(".post").css("background","#212121");
-		$("#copiedmessage").css("background","#212121");
+		body.style.background = "#212121";
+		$(".box").css("background","#353535");
+		$(".post").css("background","#353535");
+		$("#copiedmessage").css("background","#353535");
 		$("#copiedmessage").css("color","#f9f9f9");
 		document.getElementById('s3On').checked = false;
 		document.getElementById('s3Off').checked = true;
 	}
 	
 	$(".box.active").css("background","#40bced");
-	$("#unavailable").css("background","#e25a61");
-	
+	$("#unavailable").css("background","#c13434");
 	setTimeout(function () {
 		$(".box").css("transition","all 400ms ease");
-	}, 10);
-	
+	}, 20);
 }
 
 function getCookie(cname) {

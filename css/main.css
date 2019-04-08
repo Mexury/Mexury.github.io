@@ -81,7 +81,7 @@ body {
 .box.active p, .box.active i { cursor: default; }
 
 #unavailable {
-	background: #e25a61;
+	background: #c13434;
 	color: #ffffff;
 }
 
@@ -192,6 +192,7 @@ input[type="radio"]:checked + .switch {
 	margin: 5px;
 	margin-bottom: 10px;
 	display: block;
+	transition: all 400ms ease;
 }
 
 .post .title {
