@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<link id="css" href="css/contextmenu_main.css" rel="stylesheet" type="text/css">
+		<script src="js/contextmenu_main.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VeMex</title>
+	</head>
+	
+	<body onmousedown="preventDrag();">
+	<div class="ctmenu" style="z-index: 3;">
+        <a href="store.html"><div class="ctmenu-item">💰 &nbsp; Store</div></a>
+        <hr>
+        <div class="ctmenu-item">🔑 &nbsp; Login<small style="color: #aa0000; font-size: 8px; float: right; margin-top: 0px; background: #ffffff; padding: 5px;">UNAVAILABLE</small></div>
+        <div class="ctmenu-item">🔒 &nbsp; Register<small style="color: #aa0000; font-size: 8px; float: right; margin-top: 0px; background: #ffffff; padding: 5px;">UNAVAILABLE</small></div>
+    </div>
+	
+		<center>
+		
+			<div class="menu" style="z-index: 2;">
+				<img class="menulogo" src="img/logo.png" />
+				<div class="menubtnwrapper">
+					<div class="menubtn_active" title="You are here.">HOME</div>
+					<a href="store.html"><div class="menubtn">STORE</div></a>
+				</div>
+			</div>
+	
+			<div class="halfwrapper" id="leftwrapper">
+			
+				<div class="post" id="sp">
+					<div class="date">Feb 19th</div>
+					<img src="img/posts/thumbnail_developmentupdate1.png" />
+					<div class="textarea">
+						<p id="title">Back in business</p>
+						<p id="text">
+							The latest store downtime has finally been resolved.</br>
+							Click <a href="store.html" id="post_link">here</a> to visit the store.
+						</p>
+					</div>
+				</div>
+			
+				<div class="post" id="sp">
+					<div class="date">Jan 16th</div>
+					<img src="img/posts/thumbnail_developmentupdate1.png" />
+					<div class="textarea">
+						<p id="title">Store downtime</p>
+						<p id="text">
+							Due to the latest update, the store is down.
+							This will be resolved as soon as possible.
+						</p>
+					</div>
+				</div>
+				
+				<div class="post" id="sp">
+					<div class="date">Jan 16th</div>
+					<img src="img/posts/thumbnail_developmentupdate1.png" />
+					<div class="textarea">
+						<p id="title">Design update</p>
+						<p id="text">
+							We think this is the best look for our website.
+							So don't expect more major design updates.
+						</p>
+					</div>
+				</div>
+			
+				<div class="post" id="userlist_box_ourteam">
+					<div style="background: #5c1699; padding-top: 1px; padding-bottom: 1px; width: 100%; color: #ffffff;
+					font-size: 15px; font-family: 'Roboto', sans-serif;"  onmousedown="hide_ourteam();">
+					<p style="margin-left: 20px; display: inline-block;">Our team</p>
+					<p style="float: right; margin-top: 17px; margin-right: 20px;
+					font-size: 12px; display: inline-block;">(click to toggle)</p>
+					</div>
+					<div id="hidebox_ourteam">
+					
+						<div class="userbox" style="box-shadow: 0px 1px 0px 0px rgba(10,10,10,.1);">
+							<img id="userlistimg" src="img/users/mexury.png" />
+							<p class="username">Mexury</p>
+							<p class="roles">Website management & development, Discord management</p>
+						</div>
+						<div class="userbox">
+							<img id="userlistimg" src="img/users/devisty.png" />
+							<p class="username">Devisty</p>
+							<p class="roles">Discord management, Website tester</p>
+						</div>
+						
+					</div>
+				</div>
+				<div class="post" id="sp">
+					<a id="link" href="https://discord.gg/5bBZC5B"><img src="img/posts/thumbnail_discord.png"/></a>
+					<div class="textarea" style="z-index: 1;">
+						<p id="title" style="margin-bottom: 8px;">De Game Groep</p><p style="font-size: 10px; font-family: 'Roboto', sans-serif; margin-top: -10px; margin-bottom: 16px;">(the game groep)</p>
+						<p id="text">
+							Check out our official discord channel!
+						</p>
+					</div>
+				</div>
+				<div class="post" id="sp">
+					<a id="link" href="https://twitter.com/DevistyXD"><img src="img/posts/thumbnail_twitter.png"/></a>
+					<div class="textarea" style="z-index: 1;">
+						<p id="title">@DevistyXD</p>
+						<p id="text">
+							Follow Devisty on twitter to get notified when he's live!
+						</p>
+					</div>
+				</div>
+				
+				<!--<div class="halfpost" id="lefthalfpost">
+				</div>
+				<div class="halfpost" id="righthalfpost">
+				</div>-->
+				
+			</div>
+			
+			<div class="halfwrapper" id="rightwrapper">
+			
+				<div class="post">
+					<div class="date" id="date_white">Mar 1st</div>
+					<img src="img/posts/thumbnail_newcontextmenu.png" />
+					<div class="textarea">
+						<p id="title">New context menu! <small style="color: #aa0000; float: right;">W.I.P.</small></p>
+						<p id="text">
+							We created a more neatly version of the context menu. Everything you need is there with just one click.
+						</p>
+					</div>
+				</div>
+				<div class="post" id="sp">
+					<div class="date">Feb 17th</div>
+					<img src="img/posts/thumbnail_factions0.png" />
+					<div class="textarea">
+						<p id="title">Project on hold</p>
+						<p id="text">
+							The project has been put on hold. </br><i style="color: #aa0000;">No further information given.</i>
+						</p>
+					</div>
+				</div>
+				<div class="post">
+					<div class="date" id="date_white">Jan 24th</div>
+					<img src="img/posts/thumbnail_factions0.png" />
+					<div class="textarea">
+						<p id="title"><s>Apply for beta</s> <small style="color: #aa0000; float: right;">(Closed)</small></p>
+						<p id="text">
+							We are currently working on a server,
+							join our discord to apply for beta.
+						</p>
+					</div>
+				</div>
+				<div class="post" id="userlist_box_betaapplicants">
+					<div style="background: #5c1699; padding-top: 1px; padding-bottom: 1px; width: 100%; color: #ffffff;
+					font-size: 15px; font-family: 'Roboto', sans-serif;" onmousedown="hide_betaapplicants();">
+					<p style="margin-left: 20px; display: inline-block;">Beta applicants (3)</p>
+					<p style="float: right; margin-top: 17px; margin-right: 20px;
+					font-size: 12px; display: inline-block;">(click to toggle)</p>
+					</div>
+					
+					<div id="hidebox_betaapplicants">
+						<div class="userbox" style="box-shadow: 0px 1px 0px 0px rgba(10,10,10,.1);">
+							<img id="applicantsimg" src="https://crafatar.com/renders/head/73cf76ce-2ba0-4143-8b0a-0eb0af1b5596" />
+							<p class="username">misxnthrope</p>
+							<p class="roles">Beta applicant</p>
+						</div>
+						<div class="userbox" style="box-shadow: 0px 1px 0px 0px rgba(10,10,10,.1);">
+							<img id="applicantsimg" src="https://crafatar.com/renders/head/f6f27578-1834-4d7e-8696-14589448dc83" />
+							<p class="username">Jadedragon99</p>
+							<p class="roles">Beta applicant</p>
+						</div>
+						<div class="userbox">
+							<img id="applicantsimg" src="https://crafatar.com/renders/head/f5e677e8-8fee-461e-8b32-f2978349d7c5" />
+							<p class="username">The Ball</p>
+							<p class="roles">Beta applicant</p>
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+		
+		</center>	
+	
+	</body>
+	
+</html>
+
+<script>
+function preventDrag() {
+	event.preventDefault ? event.preventDefault() : event.returnValue = false;
+}
+
+var betaapplicants_hiddenstate = "hidden";
+var betaapplicants = document.getElementById('hidebox_betaapplicants');
+var betaapplicants_box = document.getElementById('userlist_box_betaapplicants');
+
+function hide_betaapplicants() {
+	if (betaapplicants_hiddenstate == "hidden") {
+		betaapplicants.style.display = "block";
+		betaapplicants_box.style.height = "auto";
+		betaapplicants_hiddenstate = "shown";
+	} else
+	if (betaapplicants_hiddenstate == "shown") {
+		betaapplicants.style.display = "none";
+		betaapplicants_box.style.height = "0px";
+		betaapplicants_box.style.paddingBottom = "0px";
+		betaapplicants_hiddenstate = "hidden";
+	}
+}
+
+var ourteam_hiddenstate = "hidden";
+var ourteam = document.getElementById('hidebox_ourteam');
+var ourteam_box = document.getElementById('userlist_box_ourteam');
+
+function hide_ourteam() {
+	if (ourteam_hiddenstate == "hidden") {
+		ourteam.style.display = "block";
+		ourteam_box.style.height = "auto";
+		ourteam_hiddenstate = "shown";
+	} else
+	if (ourteam_hiddenstate == "shown") {
+		ourteam.style.display = "none";
+		ourteam_box.style.height = "0px";
+		ourteam_box.style.paddingBottom = "0px";
+		ourteam_hiddenstate = "hidden";
+	}
+}
+
+</script>
