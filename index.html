@@ -6,18 +6,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>VeMex</title>
+		<title>Mexury.github.io</title>
 	</head>
 	
-	<body id="body">	
-
+	<body id="body">
+	
 		<center>
 			<div id="wrapper">
 				<div class="image-wrapper">
-					<img src="img/mexurylogo.png" />
+					<img src="img/mexurylogo.png"/>
 				</div>
 				
-				<div class="box-wrapper">
+				<div class="box-wrapper" style="margin-bottom: 30px;">
 					<div class="box" onmousedown="navTo('https://github.com/Mexury');">
 						<i class="fab fa-github"></i>
 						<p>Github</p>
@@ -30,33 +30,40 @@
 						<i class="fab fa-steam"></i>
 						<p>Steam</p>
 					</div>
-					<div class="box" onmousedown="navTo('blog.html');">
-						<i class="fas fa-mail-bulk"></i>
-						<p>Blog</p>
-					</div>
 					<div class="box" id="unavailable">
 						<i class="fas fa-portrait"></i>
 						<p>Portfolio</p>
 					</div>
 				</div>
-				<div id="hidden">
-					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
-					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
-				</div>
 				
+				<div class="post-wrapper">
+					<div class="post">
+						<p class="title">Website update [v1.25]</p><p class="date">Apr 8th</p></br>
+						<p class="text">Minor UI fixes. The website should now be easy to read on all mobile devices.</p>
+					</div>
+					<div class="post">
+						<p class="title">Website update [v1.2]</p><p class="date">Apr 8th</p></br>
+						<p class="text">First massive UI update. Improved responsiveness.
+						</br>Added a light and a dark theme throughout the website.</p>
+					</div>
+					<div class="post">
+						<p class="title">Website Reboot [v1.0]</p><p class="date">Apr 8th</p></br>
+						<p class="text">I will be recoding the entire website from scratch.
+						</br>You will be able to find all of the sourcecode in the github linked above.</p>
+					</div>
+				</div>
+			
 				<span id="theme">Theme</span>
-				<form name="themeForm">
+				<form name="themeForm" style="margin-bottom: 30px;">
 					<input type="radio" name="s3" id="s3On" value="1" hidden checked>
 					<label for="s3On" class="switch switch--light">Light</label>
 
 					<input type="radio" name="s3" id="s3Off" value="0" hidden>
 					<label for="s3Off" class="switch switch--dark">Dark</label>
 				</form>
-				
 				<div class="links" id="links">
 					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
 				</div>
-				
 			</div>
 		</center>
 	</body>
@@ -132,6 +139,7 @@ function getColorMode() {
 		body.style.color = "#1e1e1e";
 		body.style.background = "#f9f9f9";
 		$(".box").css("background","#f2f2f2");
+		$(".post").css("background","#f2f2f2");
 		$("#copiedmessage").css("background","#f2f2f2");
 		$("#copiedmessage").css("color","#1e1e1e");
 		document.getElementById('s3On').checked = true;
@@ -141,12 +149,14 @@ function getColorMode() {
 		body.style.color = "#f9f9f9";
 		body.style.background = "#3a3a3a";
 		$(".box").css("background","#212121");
+		$(".post").css("background","#212121");
 		$("#copiedmessage").css("background","#212121");
 		$("#copiedmessage").css("color","#f9f9f9");
 		document.getElementById('s3On').checked = false;
 		document.getElementById('s3Off').checked = true;
 	}
 	
+	$(".box.active").css("background","#40bced");
 	$("#unavailable").css("background","#e25a61");
 	
 	setTimeout(function () {
