@@ -2,6 +2,7 @@
 <html oncontextmenu="return false;">
 	<head>
 		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
+		<link id="css" href="blog/css/main.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -10,42 +11,25 @@
 	</head>
 	
 	<body id="body">	
-
+	
+	<style>
+	.image-wrapper img {
+		transition: all 400ms ease;
+	}
+	.image-wrapper img:hover {
+		transition: all 400ms ease;
+		transform: translate(0,-6px);
+		box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
+	}
+	</style>
+	
 		<center>
+			<div class="image-wrapper" style="margin-top: 50px; cursor: pointer;" onmousedown="navTo('index.html');">
+				<img src="img/mexurylogo.png" style="cursor: pointer;"/>
+			</div>
 			<div id="wrapper">
-				<div class="image-wrapper">
-					<img src="img/mexurylogo.png" />
-				</div>
-				
-				<div class="box-wrapper">
-					<div class="box" onmousedown="navTo('https://github.com/Mexury');">
-						<i class="fab fa-github"></i>
-						<p>Github</p>
-					</div>
-					<div class="box" onmousedown="discord();">
-						<i class="fab fa-discord"></i>
-						<p>Discord</p>
-					</div>
-					<div class="box" onmousedown="navTo('https://steamcommunity.com/id/Mexury/');">
-						<i class="fab fa-steam"></i>
-						<p>Steam</p>
-					</div>
-					<div class="box" onmousedown="navTo('blog.html');">
-						<i class="fas fa-mail-bulk"></i>
-						<p>Blog</p>
-					</div>
-					<div class="box" id="unavailable">
-						<i class="fas fa-portrait"></i>
-						<p>Portfolio</p>
-					</div>
-				</div>
-				<div id="hidden">
-					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
-					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
-				</div>
-				
-				<span id="theme">Theme</span>
-				<form name="themeForm">
+				<span id="theme" style="margin-top: -160px;">Theme</span>
+				<form name="themeForm" style="margin-bottom: 30px;">
 					<input type="radio" name="s3" id="s3On" value="1" hidden checked>
 					<label for="s3On" class="switch switch--light">Light</label>
 
@@ -53,10 +37,13 @@
 					<label for="s3Off" class="switch switch--dark">Dark</label>
 				</form>
 				
+				
+				<div>
+					<iframe src="blog/index.html" style="height: 700px; width: 80vw; border: 0; outline: 0;"></iframe>
+				</div>
 				<div class="links" id="links">
 					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
 				</div>
-				
 			</div>
 		</center>
 	</body>

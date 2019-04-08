@@ -8,12 +8,6 @@
    
 }
 
-body {
-	color: #000000;
-	background: #f9f9f9;
-	margin: 0;
-}
-
 #pricetag {
 	text-decoration: none;
 	float: right;
@@ -35,19 +29,25 @@ body {
 	display: inline-block;
 	margin: 4px;
 	vertical-align: top;
-	margin-top: 120px;
 	transition: all 200ms ease;
 }
 
 div.post {
 	min-height: 391.5px;
 	width: 476px;
-	background: #ffffff;
-	box-shadow: 0px 0px 0px 1px rgba(10,10,10,.1);
+	background: #f2f2f2;
+	border-radius: 3px;
 	text-align: left;
 	margin: 10px;
 	margin-left: 0px;
 	margin-right: 0px;
+	transition: all 400ms ease;
+}
+
+div.post:hover {
+	transition: all 400ms ease;
+	transform: translate(0,-4px);
+	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
 }
 
 div.post img {
@@ -55,6 +55,7 @@ div.post img {
 	width: 476px;
 	margin-top: 0px;
 	box-shadow: 0px 1px 0px 0px rgba(10,10,10,.1);
+	border-radius: 1px 0px 1px 0px;
 }
 
 .textarea {
@@ -67,15 +68,14 @@ div.post img {
 }
 
 #title {
-	font-size: 20px;
+	font-size: 18px;
 	letter-spacing: 3px;
-	font-family: 'Song Myung', serif;
+	font-weight: 500;
 }
 
 #text {
-	font-size: 14px;
+	font-size: 13px;
 	margin-top: -10px;
-	font-family: 'Roboto', sans-serif;
 }
 
 #sp .textarea {
@@ -92,7 +92,7 @@ div.post img {
 }
 
 #sp #title {
-	font-size: 16px;
+	font-size: 15px;
 }
 #sp #text {
 	font-size: 12px;
@@ -103,9 +103,15 @@ div.post img {
 	min-width: 216px;
 	height: 121.5px;
 	width: 476px;
-	background: #ffffff;
+	background: #f2f2f2;
 	text-align: left;
-	overflow: hidden;
+	transition: all 400ms ease;
+}
+
+#sp:hover {
+	transition: all 400ms ease;
+	transform: translate(0,-4px);
+	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
 }
 #sp img {
 	height: 121.5px;
@@ -114,6 +120,7 @@ div.post img {
 	margin-top: 0px;
 	box-shadow: 1px 0px 0px 0px rgba(10,10,10,.1);
 	transition: all 200ms ease;
+	border-radius: 1px 0px 0px 1px;
 }
 
 #userlist {
@@ -175,6 +182,17 @@ div.post img {
 	margin-right: 12px;
 	text-align: right;
 }
+
+#dropdown {
+	background: #5c1699;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 100%;
+	color: #ffffff;
+	font-size: 15px;
+	cursor: pointer;
+}
+#dropdown p { cursor: pointer; }
 	
 #rightwrapper .date {
 	padding: 4px;
@@ -263,26 +281,35 @@ a#link:hover + .textarea #title {
 	text-decoration: underline;
 }
 
+
+#userlist_box_betaapplicants:hover, #userlist_box_ourteam:hover {
+	transition: all 400ms ease;
+	transform: translate(0,-4px);
+	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
+}
+
 #hidebox_betaapplicants { display: none; }
 #userlist_box_betaapplicants {
 	min-height: 50px;
 	min-width: 216px;
 	height: auto;
 	width: 476px;
-	background: #ffffff;
+	background: #f2f2f2;
 	text-align: left;
+	cursor: pointer;
+	transition: all 400ms ease;
 }
 
 #userlist_box_betaapplicants .username {
 	font-size: 16px;
-	font-family: 'Song Myung', serif;
+	font-family: 'Montserrat', sans-serif;
 	margin-left: 90px;
 	margin-top: -56px;
 }
 
 #userlist_box_betaapplicants .roles {
 	font-size: 12px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	margin-left: 90px;
 	margin-top: -12px;
 }
@@ -293,20 +320,22 @@ a#link:hover + .textarea #title {
 	min-width: 216px;
 	height: auto;
 	width: 476px;
-	background: #ffffff;
+	background: #f2f2f2;
 	text-align: left;
+	cursor: pointer;
+	transition: all 400ms ease;
 }
 
 #userlist_box_ourteam .username {
 	font-size: 16px;
-	font-family: 'Song Myung', serif;
+	font-family: 'Montserrat', sans-serif;
 	margin-left: 90px;
 	margin-top: -56px;
 }
 
 #userlist_box_ourteam .roles {
 	font-size: 12px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	margin-left: 90px;
 	margin-top: -12px;
 }
@@ -422,8 +451,8 @@ body::-webkit-scrollbar-button {
 	text-decoration: underline;
 }
 
-@media screen and (min-width : 0px) and (max-width: 988px) {
+@media screen and (min-width : 0px) and (max-width: 1255px) {
 	#leftwrapper {
-		margin-bottom: -128px;
+		margin-bottom: -14px;
 	}
 }

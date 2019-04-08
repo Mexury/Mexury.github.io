@@ -2,33 +2,15 @@
 <html>
 	<head>
 		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
-		<link id="css" href="css/contextmenu_main.css" rel="stylesheet" type="text/css">
-		<script src="js/contextmenu_main.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>VeMex</title>
 	</head>
 	
-	<body onmousedown="preventDrag();">
-	<div class="ctmenu" style="z-index: 3;">
-        <a href="store.html"><div class="ctmenu-item">💰 &nbsp; Store</div></a>
-        <hr>
-        <div class="ctmenu-item">🔑 &nbsp; Login<small style="color: #aa0000; font-size: 8px; float: right; margin-top: 0px; background: #ffffff; padding: 5px;">UNAVAILABLE</small></div>
-        <div class="ctmenu-item">🔒 &nbsp; Register<small style="color: #aa0000; font-size: 8px; float: right; margin-top: 0px; background: #ffffff; padding: 5px;">UNAVAILABLE</small></div>
-    </div>
+	<body style="font-family: 'Montserrat', sans-serif;">
 	
 		<center>
-		
-			<div class="menu" style="z-index: 2;">
-				<img class="menulogo" src="img/logo.png" />
-				<div class="menubtnwrapper">
-					<div class="menubtn_active" title="You are here.">HOME</div>
-					<a href="store.html"><div class="menubtn">STORE</div></a>
-				</div>
-			</div>
 	
 			<div class="halfwrapper" id="leftwrapper">
 			
@@ -63,14 +45,13 @@
 						<p id="title">Design update</p>
 						<p id="text">
 							We think this is the best look for our website.
-							So don't expect more major design updates.
+							So don't expect more major updates.
 						</p>
 					</div>
 				</div>
 			
 				<div class="post" id="userlist_box_ourteam">
-					<div style="background: #5c1699; padding-top: 1px; padding-bottom: 1px; width: 100%; color: #ffffff;
-					font-size: 15px; font-family: 'Roboto', sans-serif;"  onmousedown="hide_ourteam();">
+					<div id="dropdown" onmousedown="hide_ourteam();">
 					<p style="margin-left: 20px; display: inline-block;">Our team</p>
 					<p style="float: right; margin-top: 17px; margin-right: 20px;
 					font-size: 12px; display: inline-block;">(click to toggle)</p>
@@ -150,8 +131,7 @@
 					</div>
 				</div>
 				<div class="post" id="userlist_box_betaapplicants">
-					<div style="background: #5c1699; padding-top: 1px; padding-bottom: 1px; width: 100%; color: #ffffff;
-					font-size: 15px; font-family: 'Roboto', sans-serif;" onmousedown="hide_betaapplicants();">
+					<div id="dropdown" onmousedown="hide_betaapplicants();">
 					<p style="margin-left: 20px; display: inline-block;">Beta applicants (3)</p>
 					<p style="float: right; margin-top: 17px; margin-right: 20px;
 					font-size: 12px; display: inline-block;">(click to toggle)</p>
@@ -186,10 +166,6 @@
 </html>
 
 <script>
-function preventDrag() {
-	event.preventDefault ? event.preventDefault() : event.returnValue = false;
-}
-
 var betaapplicants_hiddenstate = "hidden";
 var betaapplicants = document.getElementById('hidebox_betaapplicants');
 var betaapplicants_box = document.getElementById('userlist_box_betaapplicants');
