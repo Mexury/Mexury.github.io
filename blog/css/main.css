@@ -38,10 +38,11 @@ div.post {
 	background: #f2f2f2;
 	border-radius: 3px;
 	text-align: left;
-	margin: 10px;
+	margin: 12px;
 	margin-left: 0px;
 	margin-right: 0px;
 	transition: all 400ms ease;
+	margin-bottom: -3px;
 }
 
 div.post:hover {
@@ -53,9 +54,9 @@ div.post:hover {
 div.post img {
 	height: 267.75px;
 	width: 476px;
-	margin-top: 0px;
+	margin-top: -1px;
 	box-shadow: 0px 1px 0px 0px rgba(10,10,10,.1);
-	border-radius: 1px 0px 1px 0px;
+	border-radius: 3px 3px 0px 0px;
 }
 
 .textarea {
@@ -106,7 +107,7 @@ div.post img {
 	background: #f2f2f2;
 	text-align: left;
 	transition: all 400ms ease;
-	overflow: hidden;
+	border-radius: 3px;
 }
 
 #sp:hover {
@@ -119,9 +120,58 @@ div.post img {
 	width: 216px;
 	float: left;
 	margin-top: 0px;
+	margin-left: -2px;
 	box-shadow: 1px 0px 0px 0px rgba(10,10,10,.1);
 	transition: all 200ms ease;
-	border-radius: 1px 0px 0px 1px;
+	border-radius: 3px 0px 0px 3px;
+}
+
+#spl .textarea {
+	padding: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 101px;
+	min-width: 180px;
+	width: 180px;
+	float: right;
+	margin-top: -120.8px;
+	margin-left: 206px;
+	transition: all 200ms ease;
+}
+
+#spl #title {
+	font-size: 15px;
+}
+#spl #text {
+	font-size: 12px;
+}
+
+#spl {
+	min-height: 121.5px;
+	min-width: 216px;
+	height: 121.5px;
+	width: 476px;
+	background: #f2f2f2;
+	text-align: left;
+	transition: all 400ms ease;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+#spl:hover {
+	transition: all 400ms ease;
+	transform: translate(0,-4px);
+	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
+}
+#spl img {
+	height: 121.5px;
+	width: 216px;
+	float: left;
+	margin-top: 0px;
+	margin-left: -2px;
+	box-shadow: 1px 0px 0px 0px rgba(10,10,10,.1);
+	transition: all 200ms ease;
+	border-radius: 3px 0px 0px 3px;
 }
 
 #userlist {
