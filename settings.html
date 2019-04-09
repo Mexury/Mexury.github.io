@@ -50,12 +50,12 @@
 				</div>
 			
 				<span id="theme">Theme</span>
-				<form name="themeForm" style="margin-bottom: 30px;">
+				<form name="themeForm" id="themeForm" style="margin-bottom: 30px;">
 					<input type="radio" name="s3" id="s3On" value="1" hidden>
-					<label for="s3On" class="switch switch--light">Light</label>
+					<label for="s3On" class="switch switch--light"></label>
 
 					<input type="radio" name="s3" id="s3Off" value="0" hidden>
-					<label for="s3Off" class="switch switch--dark">Dark</label>
+					<label for="s3Off" class="switch switch--dark"></label>
 				</form>
 				<div class="links" id="links">
 					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
@@ -135,6 +135,7 @@ function getColorMode() {
 		document.getElementById('s3On').checked = true;
 		document.getElementById('s3On').disabled = true;
 		document.getElementById('s3Off').checked = false;
+		$("#themeForm").css("background","#f2f2f2");
 	} else
 	if (mode == 'dark') {
 		body.style.color = "#f9f9f9";
@@ -146,6 +147,7 @@ function getColorMode() {
 		document.getElementById('s3On').checked = false;
 		document.getElementById('s3Off').checked = true;
 		document.getElementById('s3Off').disabled = true;
+		$("#themeForm").css("background","#353535");
 	}
 	
 	$(".box.active").css("background","#40bced");

@@ -204,17 +204,19 @@ body {
 	font-weight: 400;
 	line-height: 1.5em;
 	border-radius: 3px;
-	padding: .125em .5em;
 	display: inline-block;
 	background-color: #2d2d2d;
 	transition: all 400ms ease;
 	margin: 2px;
 	font-size: 14px;
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	border: 2px solid rgba(10,10,10,.2);
 }
 
 input[type="radio"]:hover + .switch {
-	color: #ffffff;
-	background: #40bced;
+	border: 2px solid #40bced;
 }
 input[type="radio"]:checked + .switch {
 	color: #ffffff;
@@ -273,4 +275,12 @@ input[type="radio"]:checked + .switch {
 	font-size: 14px;
 	font-weight: 400;
 	text-align: left;
+}
+
+form {
+	background: #f2f2f2;
+	width: 70px;
+	padding: 10px;
+	padding-bottom: 6px;
+	border-radius: 70px;
 }
