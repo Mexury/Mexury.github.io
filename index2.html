@@ -6,14 +6,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-		<link rel="manifest" href="favicon/site.webmanifest">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
-		
 		<title>Mexury.github.io</title>
 	</head>
 	
@@ -75,7 +67,7 @@
 					<label for="s3Off" class="switch switch--dark">Dark</label>
 				</form>
 				<div class="links" id="links">
-					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
+					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a> and <a onmousedown="navTo('https://flaticon.com/');">Flaticon</a>.</p>
 				</div>
 			</div>
 		</center>
@@ -130,7 +122,12 @@ var rad = document.themeForm.s3;
     }
 
 function setColorMode(mode) {
-	localStorage.setItem('colormode', mode);
+	if (mode == 'light') {
+		document.cookie = "colormode=light; expires=Thu, 28 Feb 2030 12:00:00 UTC";
+	} else
+	if (mode == 'dark') {
+		document.cookie = "colormode=dark; expires=Thu, 28 Feb 2030 12:00:00 UTC";
+	}
 	window.location.reload();
 }
 
@@ -141,8 +138,8 @@ function getColorMode() {
 	$(".box").css("transition","all 0ms ease");
 	$(".post").css("transition","all 0ms ease");
 
-	var mode = localStorage.getItem('colormode');
-	if (mode == 'light') {
+	var mode = document.cookie;
+	if (getCookie('colormode') == 'light') {
 		body.style.color = "#1e1e1e";
 		body.style.background = "#f9f9f9";
 		$(".box").css("background","#f2f2f2");
@@ -150,10 +147,9 @@ function getColorMode() {
 		$("#copiedmessage").css("background","#f2f2f2");
 		$("#copiedmessage").css("color","#1e1e1e");
 		document.getElementById('s3On').checked = true;
-		document.getElementById('s3On').disabled = true;
 		document.getElementById('s3Off').checked = false;
 	} else
-	if (mode == 'dark') {
+	if (getCookie('colormode') == 'dark') {
 		body.style.color = "#f9f9f9";
 		body.style.background = "#212121";
 		$(".box").css("background","#353535");
@@ -162,7 +158,6 @@ function getColorMode() {
 		$("#copiedmessage").css("color","#f9f9f9");
 		document.getElementById('s3On').checked = false;
 		document.getElementById('s3Off').checked = true;
-		document.getElementById('s3Off').disabled = true;
 	}
 	
 	$(".box.active").css("background","#40bced");
@@ -171,5 +166,6 @@ function getColorMode() {
 		$(".box").css("transition","all 400ms ease");
 	}, 20);
 }
+
 window.onload = getColorMode();
 </script>

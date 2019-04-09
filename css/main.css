@@ -20,6 +20,12 @@ body {
 	border-radius: 100%;
 	vertical-align: middle;
 }
+.image-wrapper-secondary, .image-wrapper-secondary img {
+	height: 200px;
+	width: 200px;
+	vertical-align: middle;
+	margin-bottom: 50px;
+}
 
 #wrapper {
 	margin-top: 10vh;
@@ -71,13 +77,64 @@ body {
 	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
 }
 
-.box.active {
-	background: #e25a61;
-	color: #ffffff;
+.box-btn-wrapper {
+	width: 320px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.box-btn-wrapper input[type="number"] {
+	height: auto;
+	min-width: 20px;
+	width: auto;
+	background: #f2f2f2;
+	padding: 14px;
+	border-radius: 3px;
+	margin: 5px;
+	margin-bottom: 10px;
+	display: inline-block;
+	cursor: pointer;
+	transition: all 400ms ease;
+	border: 0;
+	outline: 0;
+	display: inline-block;
+}
+
+.box-btn {
+	height: auto;
+	min-width: 20px;
+	width: auto;
+	background: #f2f2f2;
+	padding: 10px;
+	border-radius: 3px;
+	margin: 5px;
+	margin-bottom: 10px;
+	display: inline-block;
+	cursor: pointer;
+	transition: all 400ms ease;
+	display: inline-block;
+}
+
+.box-btn i {
+	font-size: 24px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+}
+.box-btn p {
+	font-size: 13px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.box-btn:hover {
+	transition: all 400ms ease;
 	transform: translate(0,-6px);
 	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
-	cursor: default;
 }
+
 .box.active p, .box.active i { cursor: default; }
 
 #unavailable {
