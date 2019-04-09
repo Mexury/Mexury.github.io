@@ -25,12 +25,16 @@
 					<img src="img/logo.png"/>
 				</div>
 				
+				<div id="hidden">
+					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
+					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
+				</div>
 				<div class="box-wrapper" style="margin-bottom: 30px;">
 					<div class="box" onmousedown="navTo('https://github.com/Mexury');">
 						<i class="fab fa-github"></i>
 						<p>Github</p>
 					</div>
-					<div class="box" onmousedown="discord();">
+					<div class="box" onmousedown="navTo('https://discord.gg/5bBZC5B');">
 						<i class="fab fa-discord"></i>
 						<p>Discord</p>
 					</div>
@@ -60,15 +64,10 @@
 						</br>You will be able to find all of the sourcecode in the github linked above.</p>
 					</div>
 				</div>
-				
-				<div id="hidden">
-					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
-					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
-				</div>
 			
 				<span id="theme">Theme</span>
 				<form name="themeForm" style="margin-bottom: 30px;">
-					<input type="radio" name="s3" id="s3On" value="1" hidden checked>
+					<input type="radio" name="s3" id="s3On" value="1" hidden>
 					<label for="s3On" class="switch switch--light">Light</label>
 
 					<input type="radio" name="s3" id="s3Off" value="0" hidden>
