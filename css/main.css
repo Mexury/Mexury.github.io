@@ -81,17 +81,11 @@ body {
 	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
 }
 
-.box-btn-wrapper {
-	width: 320px;
-	margin-bottom: 10px;
-	display: inline-block;
-}
-
-.box-btn-wrapper input[type="number"] {
+.box.btn {
 	height: auto;
-	min-width: 20px;
+	min-width: 40px;
 	width: auto;
-	background: #f2f2f2;
+	background: #40bced;
 	padding: 14px;
 	border-radius: 3px;
 	margin: 5px;
@@ -99,49 +93,28 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	transition: all 400ms ease;
-	border: 0;
-	outline: 0;
 	display: inline-block;
+	color: #f9f9f9;
 }
 
-.box-btn {
-	height: auto;
-	min-width: 20px;
-	width: auto;
-	background: #f2f2f2;
-	padding: 10px;
-	border-radius: 3px;
-	margin: 5px;
-	margin-bottom: 10px;
-	display: inline-block;
-	cursor: pointer;
-	transition: all 400ms ease;
-	display: inline-block;
-}
-
-.box-btn i {
+.box.btn i {
 	font-size: 24px;
 	cursor: pointer;
 	display: inline-block;
 	vertical-align: middle;
+	margin-right: 0px;
 }
-.box-btn p {
+.box.btn p {
 	font-size: 13px;
 	cursor: pointer;
 	display: inline-block;
 	vertical-align: middle;
-	margin-left: 5px;
 }
 
-.box-btn:hover {
-	transition: all 400ms ease;
-	transform: translate(0,-6px);
-	box-shadow: 0px 2px 4px 0px rgba(10,10,10,.1);
-}
 
 .box.active p, .box.active i { cursor: default; }
 
-#unavailable {
+.box.unavailable {
 	background: #c13434;
 	color: #ffffff;
 }
@@ -225,14 +198,13 @@ input[type="radio"]:checked + .switch {
 
 .switch--light {
 	background-color: #f2f2f2;
-	color: #303030;
 }
 
 .switch--dark {
 	background-color: #303030;
-	color: #f2f2f2;
 }
-#theme {
+
+#form-title {
 	font-size: 13px;
 	display: block;
 	margin-bottom: 10px;
@@ -277,10 +249,35 @@ input[type="radio"]:checked + .switch {
 	text-align: left;
 }
 
+.form-container {
+	width: auto;
+	height: auto;
+	display: inline-block;
+}
+
 form {
 	background: #f2f2f2;
-	width: 70px;
+	min-width: 70px;
+	width: auto;
 	padding: 10px;
 	padding-bottom: 6px;
 	border-radius: 70px;
+}
+
+
+
+::-webkit-scrollbar-track
+{
+	background-color: #2a80a3;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #40bced;
 }

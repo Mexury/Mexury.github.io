@@ -42,19 +42,18 @@
 						<i class="fab fa-steam"></i>
 						<p>Steam</p>
 					</div>
-					<div class="box" id="unavailable">
+					<div class="box unavailable">
 						<i class="fas fa-portrait"></i>
 						<p>Portfolio</p>
 					</div>
-					<div class="box" onmousedown="navTo('settings.html');">
+					<div class="box btn" onmousedown="navTo('settings.html');">
 						<i class="fas fa-cog"></i>
-						<p>Settings</p>
 					</div>
 				</div>
 				
 				<div class="post-wrapper">
 					<div class="post">
-						<p class="title">Website update [v1.31]</p><p class="date">Apr 8th</p></br>
+						<p class="title">Website update [v1.31]</p><p class="date">Apr 9th</p></br>
 						<p class="text">Minor UI fixes. Added a settings page to change the appearance of the website.</br> More settings coming soon.</p>
 					</div>
 					<div class="post">
@@ -81,6 +80,7 @@
 	
 </html>
 
+<script src="js/module_applycolorsettings.js"></script>
 <script>
 function navTo(url) {
 	window.location.href = url;
@@ -108,41 +108,6 @@ function discord() {
 		}, 100);
     }, 1000);
 }
-function setColorMode(mode) {
-	localStorage.setItem('colormode', mode);
-	window.location.reload();
-}
 
-function getColorMode() {
-	var body = document.getElementById('body');
-	body.style.color = "#1e1e1e";
-	body.style.background = "#f9f9f9";
-	$(".box").css("transition","all 0ms ease");
-	$(".post").css("transition","all 0ms ease");
-
-	var mode = localStorage.getItem('colormode');
-	if (mode == 'light') {
-		body.style.color = "#1e1e1e";
-		body.style.background = "#f9f9f9";
-		$(".box").css("background","#f2f2f2");
-		$(".post").css("background","#f2f2f2");
-		$("#copiedmessage").css("background","#f2f2f2");
-		$("#copiedmessage").css("color","#1e1e1e");
-	} else
-	if (mode == 'dark') {
-		body.style.color = "#f9f9f9";
-		body.style.background = "#212121";
-		$(".box").css("background","#353535");
-		$(".post").css("background","#353535");
-		$("#copiedmessage").css("background","#353535");
-		$("#copiedmessage").css("color","#f9f9f9");
-	}
-	
-	$(".box.active").css("background","#40bced");
-	$("#unavailable").css("background","#c13434");
-	setTimeout(function () {
-		$(".box").css("transition","all 400ms ease");
-	}, 20);
-}
 window.onload = getColorMode();
 </script>
