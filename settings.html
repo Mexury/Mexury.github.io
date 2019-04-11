@@ -24,30 +24,10 @@
 				<div class="image-wrapper">
 					<img src="img/logo.png"/>
 				</div>
-				
-				<div id="hidden">
-					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
-					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
-				</div>
 				<div class="box-wrapper" style="margin-bottom: 30px;">
-					<div class="box" onmousedown="navTo('https://github.com/Mexury');">
-						<i class="fab fa-github"></i>
-						<p>Github</p>
-					</div>
-					<div class="box" onmousedown="navTo('https://discord.gg/5bBZC5B');">
-						<i class="fab fa-discord"></i>
-						<p>Discord</p>
-					</div>
-					<div class="box" onmousedown="navTo('https://steamcommunity.com/id/Mexury/');">
-						<i class="fab fa-steam"></i>
-						<p>Steam</p>
-					</div>
-					<div class="box unavailable">
-						<i class="fas fa-portrait"></i>
-						<p>Portfolio</p>
-					</div>
 					<div class="box btn" onmousedown="navTo('index.html');">
-						<i class="fas fa-home"></i>
+						<i class="fas fa-undo-alt"></i>
+						<p>Return to profile</p>
 					</div>
 				</div>
 			
@@ -76,29 +56,5 @@
 function navTo(url) {
 	window.location.href = url;
 }
-function discord() {
-	document.getElementById('hidden').style.display = "block";
-	document.getElementById('hidden').style.opacity = "1";
-	document.getElementById('copythis').style.display = "block";
-	document.getElementById('copythis').style.opacity = "0";
-	document.getElementById('copythis').select();
-	document.execCommand('copy');
-	document.getElementById('copythis').style.display = "none";
-	document.getElementById('copiedmessage').style.display = "block";
-	document.getElementById('copiedmessage').style.opacity = "1";
-	setTimeout(function () {
-		document.getElementById('copiedmessage').style.opacity = "0";
-		setTimeout(function () {
-			setTimeout(function () {
-				document.getElementById('copiedmessage').style.opacity = "0";
-				document.getElementById('copiedmessage').style.display = "none";
-				document.getElementById('copythis').style.display = "block";
-				document.getElementById('links').style.transform = "translate(0,-1px)";
-				document.getElementById('hidden').style.display = "none";
-			}, 100);
-		}, 100);
-    }, 1000);
-}
-
 window.onload = getColorMode();
 </script>

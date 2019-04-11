@@ -55,7 +55,11 @@ function getColorMode() {
 	}
 	
 	$(".box.btn").css("background","#40bced");
+	$(".box.btn").css("color","#f9f9f9");
 	$(".box.unavailable").css("background","#c13434");
+	$(".box.twitch").css("background","#6441a5");
+	$(".box.steam").css("background","#344589");
+	$(".box.twitter").css("background","#1da1f2");
 	setTimeout(function () {
 		$(".box").css("transition","all 400ms ease");
 	}, 20);
