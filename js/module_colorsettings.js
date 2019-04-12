@@ -60,6 +60,7 @@ function getColorMode() {
 	$(".box.twitch").css("background","#6441a5");
 	$(".box.steam").css("background","#344589");
 	$(".box.twitter").css("background","#1da1f2");
+	$(".attachement").css("color","#f9f9f9");
 	setTimeout(function () {
 		$(".box").css("transition","all 400ms ease");
 	}, 20);

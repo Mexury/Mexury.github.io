@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html oncontextmenu="return false;">
+<html oncontextmenu="return false;" lang="EN">
 	<head>
 		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -54,22 +54,34 @@
 					</div>
 				</div>
 				
+				<div id="imageshowbox">
+					<i class="fas fa-times-circle" id="closeimg" onmousedown="closeImage();"></i>
+					<img id="showimg" />
+				</div>
+				
 				<div class="post-wrapper">
 					<div class="post">
-						<p class="title">Website update [v1.31]</p><p class="date">Apr 9th</p></br>
+						<p class="title">Website update [v1.36] <small class="date">Apr 10th</small></p></br>
+						<p class="text">Want to actually see what we post? Now you can! Some posts have images or other files attached to them!</p>
+						<div class="attachement">
+							<i class="fas fa-paperclip"></i><p onmousedown="showImage('img/attachements/screenshot_01.jpg')">screenshot_01.jpg</p>
+						</div>
+					</div>
+					<div class="post">
+						<p class="title">Website update [v1.31] <small class="date">Apr 9th</small></p></br>
 						<p class="text">Minor UI fixes. Added a settings page to change the appearance of the website.</br> More settings coming soon.</p>
 					</div>
 					<div class="post">
-						<p class="title">Website update [v1.25]</p><p class="date">Apr 8th</p></br>
+						<p class="title">Website update [v1.25] <small class="date">Apr 8th</small></p></br>
 						<p class="text">Minor UI fixes. The website should now be easy to read on all mobile devices.</p>
 					</div>
 					<div class="post">
-						<p class="title">Website update [v1.2]</p><p class="date">Apr 8th</p></br>
+						<p class="title">Website update [v1.2] <small class="date">Apr 8th</small></p></br>
 						<p class="text">First massive UI update. Improved responsiveness.
 						</br>Added a light and a dark theme throughout the website.</p>
 					</div>
 					<div class="post">
-						<p class="title">Website Reboot [v1.0]</p><p class="date">Apr 8th</p></br>
+						<p class="title">Website Reboot [v1.0] <small class="date">Apr 8th</small></p></br>
 						<p class="text">I will be recoding the entire website from scratch.
 						</br>You will be able to find all of the sourcecode in the github linked above.</p>
 					</div>
@@ -91,6 +103,25 @@
 function navTo(url) {
 	window.location.href = url;
 }
+
+function showImage(path) {
+	var imageshowbox = document.getElementById('imageshowbox');
+	var showimg = document.getElementById('showimg');
+	
+	imageshowbox.style.display = "block";
+	showimg.style.display = "block";
+	showimg.src = path;
+}
+
+function closeImage() {
+	var imageshowbox = document.getElementById('imageshowbox');
+	var showimg = document.getElementById('showimg');
+	
+	imageshowbox.style.display = "none";
+	showimg.style.display = "none";
+	showimg.src = "";
+}
+
 function discord() {
 	document.getElementById('hidden').style.display = "block";
 	document.getElementById('hidden').style.opacity = "1";

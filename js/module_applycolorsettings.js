@@ -14,6 +14,8 @@ function getColorMode() {
 		$("#copiedmessage").css("background","#f2f2f2");
 		$("#copiedmessage").css("color","#1e1e1e");
 		$("#themeForm").css("background","#f2f2f2");
+		$("#closeimg").css("color","#1e1e1e");
+		$("#imageshowbox").css("background","#f2f2f2");
 	} else
 	if (mode == 'dark') {
 		body.style.color = "#f9f9f9";
@@ -23,6 +25,8 @@ function getColorMode() {
 		$("#copiedmessage").css("background","#353535");
 		$("#copiedmessage").css("color","#f9f9f9");
 		$("#themeForm").css("background","#353535");
+		$("#closeimg").css("color","#f9f9f9");
+		$("#imageshowbox").css("background","#353535");
 	}
 	
 	$(".box.btn").css("background","#40bced");
@@ -31,6 +35,7 @@ function getColorMode() {
 	$(".box.twitch").css("background","#6441a5");
 	$(".box.steam").css("background","#344589");
 	$(".box.twitter").css("background","#1da1f2");
+	$(".attachement").css("color","#f9f9f9");
 	setTimeout(function () {
 		$(".box").css("transition","all 400ms ease");
 	}, 20);
