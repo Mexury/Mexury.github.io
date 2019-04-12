@@ -351,26 +351,12 @@ form {
 	padding: 1px;
 }
 
-#showimg { display: none; margin-left: 80px;}
+#showimg { display: none; }
 
 #imageshowbox img {
-	max-width: 350px;
+	max-width: 300px;
 	height: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-radius: 3px;
-}
-
-#imageshowbox i {
-	font-size: 40px;
-	float: right;
-	margin: 20px;
-	cursor: pointer;
-	transition: all 400ms ease;
-}
-
-#imageshowbox i:hover {
-	transform: translate(0,-6px);
-	text-shadow: 2px 3px rgba(10,10,10,.1);
-	transition: all 400ms ease;
 }

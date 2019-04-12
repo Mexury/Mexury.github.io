@@ -55,7 +55,6 @@
 				</div>
 				
 				<div id="imageshowbox">
-					<i class="fas fa-times-circle" id="closeimg" onmousedown="closeImage();"></i>
 					<img id="showimg" />
 				</div>
 				
@@ -64,7 +63,7 @@
 						<p class="title">Website update [v1.36] <small class="date">Apr 10th</small></p></br>
 						<p class="text">Want to actually see what we post? Now you can! Some posts have images or other files attached to them!</p>
 						<div class="attachement">
-							<i class="fas fa-paperclip"></i><p onmousedown="showImage('img/attachements/screenshot_01.jpg')">screenshot_01.jpg</p>
+							<i class="fas fa-paperclip"></i><p onmousedown="showImage('img/attachements/screenshot_01.jpg'); setClickID('attachement');">screenshot_01.jpg</p>
 						</div>
 					</div>
 					<div class="post">
@@ -104,7 +103,12 @@ function navTo(url) {
 	window.location.href = url;
 }
 
-function showImage(path) {
+var clickID = "";
+function setClickID(id) {
+	clickID = id;
+}
+
+function showImage(path, id) {
 	var imageshowbox = document.getElementById('imageshowbox');
 	var showimg = document.getElementById('showimg');
 	
@@ -112,6 +116,17 @@ function showImage(path) {
 	showimg.style.display = "block";
 	showimg.src = path;
 }
+
+
+
+document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;
+	if (clickID !== 'attachement') {
+		closeImage();
+	} else {}
+	setClickID('');
+}, false);
 
 function closeImage() {
 	var imageshowbox = document.getElementById('imageshowbox');
