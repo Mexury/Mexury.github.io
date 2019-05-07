@@ -7,11 +7,14 @@ var rad = document.themeForm.s3;
                 prev = this;
             }
             console.log(this.value)
+			if (this.value == 2) {
+				setColorMode('bluepurple');
+			} else
 			if (this.value == 1) {
-				setColorMode('light');
+				setColorMode('bluegreen');
 			} else
 			if (this.value == 0) {
-				setColorMode('dark');
+				setColorMode('orangered');
 			}
         };
     }

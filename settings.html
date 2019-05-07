@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html oncontextmenu="return false;">
+<html oncontextmenu="return false;" lang="EN">
 	<head>
 		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -13,48 +13,56 @@
 		<link rel="manifest" href="favicon/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		
-		<title>Settings</title>
+		<title>Home</title>
 	</head>
 	
 	<body id="body">
 	
 		<center>
-			<div id="wrapper">
-				<div class="image-wrapper">
-					<img src="img/logo.png"/>
+			<div class="menu" style="z-index: 1;">
+				<img src="img/logo.png" />
+				<div class="mnu-btn-container">
+					<div class="mnu-btn" onmousedown="navigate('index.html');">HOME</div>
+					<div class="mnu-btn">TOOLS</div>
+					<div class="mnu-btn current">SETTINGS</div>
 				</div>
-				<div class="box-wrapper" style="margin-bottom: 30px;">
-					<div class="box btn" onmousedown="navTo('index.html');">
-						<i class="fas fa-undo-alt"></i>
-						<p>Return to profile</p>
-					</div>
-				</div>
-			
+			</div>
+		
+			<div id="wrapper" style="z-index: 0; margin-top: 390px; min-height: calc(100vh - 400px);">
+				<h3>SETTINGS (w.i.p)</h3>
+				
 				<div class="form-container">
 					<span id="form-title">Theme</span>
 					<form name="themeForm" id="themeForm" style="margin-bottom: 30px;">
-						<input type="radio" name="s3" id="s3On" value="1" hidden>
-						<label for="s3On" class="switch switch--light"></label>
-
-						<input type="radio" name="s3" id="s3Off" value="0" hidden>
-						<label for="s3Off" class="switch switch--dark"></label>
+						<input type="radio" name="theme" id="themeBP" value="2" hidden>
+						<label for="themeBP" class="switch bp"></label>
+						
+						<input type="radio" name="theme" id="themeBG" value="1" hidden>
+						<label for="themeBG" class="switch bg"></label>
+						
+						<input type="radio" name="theme" id="themeOR" value="0" hidden>
+						<label for="themeOR" class="switch or"></label>
 					</form>
 				</div>
-				
-				<div class="links" id="links">
-					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
-				</div>
 			</div>
+		
 		</center>
 	</body>
 	
 </html>
 
-<script src="js/module_colorsettings.js"></script>
+<!--<script src="js/module_colorsettings.js"></script>-->
+<script src="js/twitch/main.js"></script>
 <script>
-function navTo(url) {
+$('.carousel').carousel({
+	dist: 0,
+	loop: true,
+	duration: 300
+});
+
+function navigate(url) {
 	window.location.href = url;
 }
-window.onload = getColorMode();
 </script>

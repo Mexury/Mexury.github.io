@@ -13,6 +13,7 @@
 		<link rel="manifest" href="favicon/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		
 		<title>Home</title>
 	</head>
@@ -20,146 +21,66 @@
 	<body id="body">
 	
 		<center>
-			<div id="wrapper">
-				<div class="image-wrapper">
-					<img src="img/logo.png"/>
-				</div>
-				<p id="profile-name">Mexury's Profile</p>
-				
-				<div id="hidden">
-					<input id="copythis" type="text" value="Mexury#9992" readonly style="display: none;"></input>
-					<div id="copiedmessage"><i class="fas fa-clipboard-check"></i><p>Discord name copied!</p></div>
-				</div>
-				<div class="box-wrapper" style="margin-bottom: 30px;">
-					<div class="box" onmousedown="navTo('devisty/index.html');">
-						<i class="fas fa-id-badge"></i>
-						<p>Devisty</p>
-					</div>
-					<div class="box btn" onmousedown="navTo('settings.html');">
-						<i class="fas fa-cog"></i>
-						<p>Settings</p>
-					</div>
-					</br>
-					<div class="box" onmousedown="navTo('https://github.com/mexury');">
-						<i class="fab fa-github"></i>
-						<p>Github</p>
-					</div>
-					<div class="box twitter" onmousedown="navTo('https://twitter.com/darealmexury');">
-						<i class="fab fa-twitter"></i>
-						<p>Twitter</p>
-					</div>
-					<div class="box steam" onmousedown="navTo('https://steamcommunity.com/id/Mexury/');">
-						<i class="fab fa-steam"></i>
-						<p>Steam</p>
-					</div>
-				</div>
-				
-				<div id="imageshowbox">
-					<img id="showimg" />
-				</div>
-				
-				<div class="post-wrapper">
-					<div class="post">
-						<p class="title">Website update [v1.36] <small class="date">Apr 10th</small></p></br>
-						<p class="text">Want to actually see what we post? Now you can! Some posts have images or other files attached to them!</p>
-						<div class="attachement">
-							<i class="fas fa-paperclip"></i><p onmousedown="showImage('img/attachements/screenshot_01.jpg'); setClickID('attachement');">screenshot_01.jpg</p>
-						</div>
-					</div>
-					<div class="post">
-						<p class="title">Website update [v1.31] <small class="date">Apr 9th</small></p></br>
-						<p class="text">Minor UI fixes. Added a settings page to change the appearance of the website.</br> More settings coming soon.</p>
-					</div>
-					<div class="post">
-						<p class="title">Website update [v1.25] <small class="date">Apr 8th</small></p></br>
-						<p class="text">Minor UI fixes. The website should now be easy to read on all mobile devices.</p>
-					</div>
-					<div class="post">
-						<p class="title">Website update [v1.2] <small class="date">Apr 8th</small></p></br>
-						<p class="text">First massive UI update. Improved responsiveness.
-						</br>Added a light and a dark theme throughout the website.</p>
-					</div>
-					<div class="post">
-						<p class="title">Website Reboot [v1.0] <small class="date">Apr 8th</small></p></br>
-						<p class="text">I will be recoding the entire website from scratch.
-						</br>You will be able to find all of the sourcecode in the github linked above.</p>
-					</div>
-					<div class="notify">
-						<p>Older posts have been removed.</p>
-					</div>
-				</div>
-				<div class="links" id="links">
-					<p><b><i class="far fa-copyright"></i> VEMEX </b>&nbsp;<span style="font-weight: 500;">2019</span> &nbsp;| &nbsp;This website uses <a onmousedown="navTo('https://fontawesome.com/');">Font Awesome</a>.</p>
+			<div class="menu" style="z-index: 1;">
+				<img src="img/logo.png" />
+				<div class="mnu-btn-container">
+					<div class="mnu-btn current">HOME</div>
+					<div class="mnu-btn">TOOLS</div>
+					<div class="mnu-btn" onmousedown="navigate('settings.html');">SETTINGS</div>
 				</div>
 			</div>
+			
+			<div id="comment-wrapper" style="z-index: 1;">
+				<div class="carousel">
+					<a class="carousel-item">
+						<div class="box-comment">
+							<img src="img/users/Mexury.png" id="user"></img>
+							<p>Join our discord!</p>
+							<div class="small-btn" onmousedown="navigate('https://discord.gg/5bBZC5B');">here</div>
+						</div>
+					</a>
+					<a class="carousel-item">
+						<div class="box-comment">
+							<div id="statuscircle"></div>
+							<p id="status">Gathering Twitch resources...</p>
+							<div id="twitch-btn" class="small-btn" onmousedown="navigate('https://twitch.tv/devistygg/');">watch</div>
+						</div>
+					</a>
+					<a class="carousel-item">
+						<div class="box-comment">
+							<img src="img/users/Devisty.png" id="user"></img>
+							<p>Follow me on twitter!</p>
+							<div class="small-btn" onmousedown="navigate('https://twitter.com/devistygg/');">here</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			
+			<div id="wrapper" style="z-index: 0;">
+				<div id="wrapper-posts">
+					<div class="post">
+						<p class="post-title">Update v4.0</p>
+						<p class="post-text">This is the first official v4.0 website update.
+						</br>Full mobile support will be added in later versions.</p>
+					</div>
+				</div>
+			</div>
+		
 		</center>
 	</body>
 	
 </html>
 
-<script src="js/module_applycolorsettings.js"></script>
+<!--<script src="js/module_applycolorsettings.js"></script>-->
+<script src="js/twitch/main.js"></script>
 <script>
-function navTo(url) {
+$('.carousel').carousel({
+	dist: 0,
+	loop: true,
+	duration: 300
+});
+
+function navigate(url) {
 	window.location.href = url;
 }
-
-var clickID = "";
-function setClickID(id) {
-	clickID = id;
-}
-
-function showImage(path, id) {
-	var imageshowbox = document.getElementById('imageshowbox');
-	var showimg = document.getElementById('showimg');
-	
-	imageshowbox.style.display = "block";
-	showimg.style.display = "block";
-	showimg.src = path;
-}
-
-
-
-document.addEventListener('click', function(e) {
-    e = e || window.event;
-    var target = e.target || e.srcElement;
-	if (clickID !== 'attachement') {
-		closeImage();
-	} else {}
-	setClickID('');
-}, false);
-
-function closeImage() {
-	var imageshowbox = document.getElementById('imageshowbox');
-	var showimg = document.getElementById('showimg');
-	
-	imageshowbox.style.display = "none";
-	showimg.style.display = "none";
-	showimg.src = "";
-}
-
-function discord() {
-	document.getElementById('hidden').style.display = "block";
-	document.getElementById('hidden').style.opacity = "1";
-	document.getElementById('copythis').style.display = "block";
-	document.getElementById('copythis').style.opacity = "0";
-	document.getElementById('copythis').select();
-	document.execCommand('copy');
-	document.getElementById('copythis').style.display = "none";
-	document.getElementById('copiedmessage').style.display = "block";
-	document.getElementById('copiedmessage').style.opacity = "1";
-	setTimeout(function () {
-		document.getElementById('copiedmessage').style.opacity = "0";
-		setTimeout(function () {
-			setTimeout(function () {
-				document.getElementById('copiedmessage').style.opacity = "0";
-				document.getElementById('copiedmessage').style.display = "none";
-				document.getElementById('copythis').style.display = "block";
-				document.getElementById('links').style.transform = "translate(0,-1px)";
-				document.getElementById('hidden').style.display = "none";
-			}, 100);
-		}, 100);
-    }, 1000);
-}
-
-window.onload = getColorMode();
 </script>
