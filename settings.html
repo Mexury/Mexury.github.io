@@ -2,6 +2,7 @@
 <html oncontextmenu="return false;" lang="EN">
 	<head>
 		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
+		<link id="css" href="css/loader.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -19,19 +20,21 @@
 	</head>
 	
 	<body id="body">
-	
-		<center>
+		<center id="center">
+			<div id="load-wrapper">
+				<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+			</div>
 			<div class="menu" style="z-index: 1;">
 				<img src="img/logo.png" />
 				<div class="mnu-btn-container">
-					<div class="mnu-btn" onmousedown="navigate('index.html');">HOME</div>
+					<div class="mnu-btn" onmouseup="navigate('index.html');">HOME</div>
 					<div class="mnu-btn">TOOLS</div>
 					<div class="mnu-btn current">SETTINGS</div>
 				</div>
 			</div>
 		
 			<div id="wrapper" style="z-index: 0; margin-top: 390px; min-height: calc(100vh - 400px);">
-				<h3>SETTINGS (w.i.p)</h3>
+				<h3>SETTINGS</h3>
 				
 				<div class="form-container">
 					<span id="form-title">Theme</span>
@@ -53,16 +56,12 @@
 	
 </html>
 
-<!--<script src="js/module_colorsettings.js"></script>-->
-<script src="js/twitch/main.js"></script>
+<script src="js/module_colorsettings.js"></script>
+<script src="js/module_loader.js"></script>
 <script>
-$('.carousel').carousel({
-	dist: 0,
-	loop: true,
-	duration: 300
-});
-
 function navigate(url) {
 	window.location.href = url;
 }
+
+window.onload = getColorMode();
 </script>

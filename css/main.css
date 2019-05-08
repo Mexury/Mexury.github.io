@@ -16,6 +16,7 @@ body {
 	background: #f9f9f9;
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
+	overflow: hidden;
 }
 
 .menu {
@@ -181,8 +182,8 @@ body {
 	background: rgb(212,0,255);
 	background: linear-gradient(220deg, rgba(212,0,255,1) 0%, rgba(0,212,255,1) 100%);
 }
-.pulse:before,
-.pulse:after {
+.pulsebp:before,
+.pulsebp:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -193,10 +194,10 @@ body {
 	left: 24px;
 	top: 28px;
 	border-radius: 50%;
-	animation: animate 1.5s linear infinite;
+	animation: animpulsebp 1.5s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animpulsebp {
 	0% {
 		transform: scale(0.7);
 		opacity: 0;
@@ -210,6 +211,78 @@ body {
 	}
 	60% {
 		border: 1px solid #d400ff;
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+}
+
+.pulsebg:before,
+.pulsebg:after {
+	content: '';
+	display: block;
+	position: absolute;
+	border: 50%;
+	border: 1px solid #00d4ff;
+	height: 40px;
+	width: 40px;
+	left: 24px;
+	top: 28px;
+	border-radius: 50%;
+	animation: animpulsebg 1.5s linear infinite;
+}
+
+@keyframes animpulsebg {
+	0% {
+		transform: scale(0.7);
+		opacity: 0;
+		border: 1px solid #00d4ff;
+	}
+	40% {
+		border: 1px solid #00d4ff;
+	}
+	50% {
+		opacity: 1;
+	}
+	60% {
+		border: 1px solid #16cc00;
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+}
+
+.pulseor:before,
+.pulseor:after {
+	content: '';
+	display: block;
+	position: absolute;
+	border: 50%;
+	border: 1px solid #ffca00;
+	height: 40px;
+	width: 40px;
+	left: 24px;
+	top: 28px;
+	border-radius: 50%;
+	animation: animpulseor 1.5s linear infinite;
+}
+
+@keyframes animpulseor {
+	0% {
+		transform: scale(0.7);
+		opacity: 0;
+		border: 1px solid #ffca00;
+	}
+	40% {
+		border: 1px solid #ffca00;
+	}
+	50% {
+		opacity: 1;
+	}
+	60% {
+		border: 1px solid #cc0000;
 	}
 	100% {
 		transform: scale(1.2);
@@ -243,6 +316,37 @@ body {
 	background: rgba(10,10,10,.007);
 	display: inline-block;
 	vertical-align: top;
+}
+
+.tip {
+	text-align: center;
+	background: rgb(212,0,255);
+	background: linear-gradient(220deg, rgba(212,0,255,1) 0%, rgba(0,212,255,1) 100%);
+	border-radius: 5px;
+	margin: 10px;
+	box-shadow: 0px 0px 3px 0px rgba(10,10,10,.1);
+	padding-bottom: 0px;
+	margin: 20px;
+	padding: 1px;
+	width: auto;
+	display: inline-block;
+	color: #ffffff;
+}
+.tip p {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.tip p.post-title {
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-bottom: -10px;
+}
+
+.tip p.post-text {
+	font-size: 14px;
+	font-weight: 400;
 }
 
 .post {
