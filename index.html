@@ -16,6 +16,38 @@
 			<p>Project <purple>Amethyst</purple></p>
 		</div>
 		<center>
+			<div class="item-panel-container-small" id="stew-panel">
+				<div class="item-panel-small">
+					<div class="title-banner" id="common-title">Common</div>
+					<div class="name-banner">Simple stew</div>
+					<img class="item-img" src="img/items/mushroom_stew.png" id="pixel" />
+				</div>
+				<div class="item-panel-small">
+					<div class="title-banner" id="uncommon-title">Uncommon</div>
+					<div class="name-banner">Sugary stew</div>
+					<img class="item-img" src="img/items/mushroom_stew.png" id="pixel" />
+				</div>
+				<div class="item-panel-small">
+					<div class="title-banner" id="rare-title">Rare</div>
+					<div class="name-banner">Healthy stew</div>
+					<img class="item-img" src="img/items/mushroom_stew.png" id="pixel" />
+				</div>
+				<div class="item-panel-small">
+					<div class="title-banner" id="rare-title">Rare</div>
+					<div class="name-banner">Spicy stew</div>
+					<img class="item-img" src="img/items/rabbit_stew.png" id="pixel" />
+				</div>
+				<div class="item-panel-small">
+					<div class="title-banner" id="rare-title">Rare</div>
+					<div class="name-banner">Tasty stew</div>
+					<img class="item-img" src="img/items/rabbit_stew.png" id="pixel" />
+				</div>
+				<div class="item-panel-small">
+					<div class="title-banner" id="legendary-title">Legendary</div>
+					<div class="name-banner">Godly stew</div>
+					<img class="item-img" src="img/items/rabbit_stew.png" id="pixel" />
+				</div>
+			</div></br></br>
 			<div class="item-panel-container" id="kit-panel">
 				<div class="item-panel" onClick="requestKitInformation(0);">
 					<div class="title-banner" id="legacy-title" >Legacy kit</div>
@@ -28,6 +60,7 @@
 					<img class="item-img" src="img/items/raw_beef.png" id="pixel" />
 				</div>
 				<div class="item-panel" onClick="requestKitInformation(2);">
+					<div class="title-banner" id="empty-title">Empty</div>
 					<div class="name-banner">Fisherman</div>
 					<img class="item-img" src="img/items/fishing_rod.png" id="pixel" />
 				</div>
@@ -37,14 +70,17 @@
 					<img class="item-img" src="img/items/feather.png" id="pixel" />
 				</div>
 				<div class="item-panel" onClick="requestKitInformation(4);">
+					<div class="title-banner" id="empty-title">Empty</div>
 					<div class="name-banner">Farmer</div>
 					<img class="item-img" src="img/items/diamond_hoe.png" id="pixel" />
 				</div>
 				<div class="item-panel" onClick="requestKitInformation(5);">
+					<div class="title-banner" id="empty-title">Empty</div>
 					<div class="name-banner">Batter</div>
 					<img class="item-img" src="img/items/stick.png" id="pixel" />
 				</div>
 				<div class="item-panel" onClick="requestKitInformation(6);">
+					<div class="title-banner" id="empty-title">Empty</div>
 					<div class="name-banner">Pyro</div>
 					<img class="item-img" src="img/items/flint_and_steel.png" id="pixel" />
 				</div>
@@ -507,6 +543,8 @@ function requestKitInformation(kitid) {
 					</li>
 				</ul>
 				</div>
+				
+				<p id="credit">Created by JeroenJ</p>
 			</div>
 		`
 	}
@@ -572,7 +610,7 @@ function requestKitInformation(kitid) {
 			<p>ARCHER</p>
 			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
 			<div class="lore-box">
-				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 60</p>
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 80</p>
 				</br>
 				<div class="item-content-box">
 					<div class="item-content-panel">
@@ -601,7 +639,7 @@ function requestKitInformation(kitid) {
 							<p id="item-count"></p>
 						</div>
 						<div class="item-show-box">
-							<img src="img/items/leather armor/default/leather_boots.png" id="pixel" />
+							<img src="img/items/chainmail armor/chainmail_boots.png" id="pixel" />
 							<p id="item-count"></p>
 						</div>
 					</div>
@@ -615,7 +653,15 @@ function requestKitInformation(kitid) {
 				</div>
 				<div class="item-content-box-abilities">
 				Abilities</br>
-				<small>This kit has no abilities</small>
+				
+				<ul>
+					<li><small>Piercing Rain</small></br>
+						<small style="letter-spacing: 2.3px;">Left-Click archer's bow to send a piercing rain of 10 arrows towards an enemy.</small></br>
+						<small style="letter-spacing: 2.3px;">30% chance to light one of the arrows on fire.</small></br>
+						<small style="letter-spacing: 2.3px;">This doesn't take your arrows from your inventory.</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 60s</small>
+					</li>
+				</ul>
 				</div>
 			</div>
 		`
@@ -625,7 +671,7 @@ function requestKitInformation(kitid) {
 			<p>MAGE</p>
 			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
 			<div class="lore-box">
-				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 110</p>
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 80</p>
 				</br>
 				<div class="item-content-box">
 					<div class="item-content-panel">
@@ -638,7 +684,7 @@ function requestKitInformation(kitid) {
 					<div class="item-content-panel">
 						<div class="content-title">Armor</div>
 						<div class="item-show-box">
-							<img src="img/items/chainmail armor/chainmail_helmet.png" id="pixel" />
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
 							<p id="item-count"></p>
 						</div>
 						<div class="item-show-box">
@@ -679,14 +725,14 @@ function requestKitInformation(kitid) {
 						<small style="letter-spacing: 2.3px;">Right-click Mage's Wand to cast.</small></br>
 						<small style="letter-spacing: 2.3px;">Launches you and enemies in a 5m radius.</small></br>
 						<small style="letter-spacing: 2.3px;">Costs: 150 mana</small></br>
-						<small style="letter-spacing: 2.3px;">Cooldown: 10s</small>
+						<small style="letter-spacing: 2.3px;">Cooldown: 8s</small>
 					</li>
 					<li><small>Repulse</small></br>
 						<small style="letter-spacing: 2.3px;">Right-click Mage's Wand to cast.</small></br>
 						<small style="letter-spacing: 2.3px;">Launches you.</small></br>
 						<small style="letter-spacing: 2.3px;">Doesn't deal fall damage.</small></br>
 						<small style="letter-spacing: 2.3px;">Costs: 40 mana</small></br>
-						<small style="letter-spacing: 2.3px;">Cooldown: 10s</small>
+						<small style="letter-spacing: 2.3px;">Cooldown: 3s</small>
 					</li>
 				</ul>
 				</div>
