@@ -220,7 +220,7 @@ p#credit {
 .item-panel-container-small {
 	display: inline-grid;
 	grid-template-columns: 175.7px 175.7px 175.7px 175.7px 175.7px 175.7px;
-	grid-template-rows: 194px;
+	grid-template-rows: 224px;
 	column-gap: 15px;
 	row-gap: 15px;
 	margin-top: 20px;
@@ -228,7 +228,7 @@ p#credit {
 
 .item-panel-small {
 	width: 171.7px;
-	min-height: 165px;
+	min-height: 195px;
 	background: rgba(255, 255, 255, .5);
 	border: 2px solid rgba(0,0,0,.04);
 	box-shadow: 0px 0px 18px 2px rgba(0,0,0,.04);
