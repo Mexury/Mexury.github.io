@@ -1,101 +1,708 @@
-<!DOCTYPE html>
-<html oncontextmenu="return false;" lang="EN">
+<!doctype html>
+<html>
 	<head>
-		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
-		<link id="css" href="css/loader.css" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="https://kit.fontawesome.com/687c5c8342.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 		<link rel="manifest" href="favicon/site.webmanifest">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		
-		<title>Home</title>
 	</head>
 	
-	<body id="body">
-		<center id="center">
-		<div id="load-wrapper">
-			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+	<body>
+		<div class="header">
+			<p>Project <purple>Amethyst</purple></p>
 		</div>
-		
-			<div class="menu" style="z-index: 1;">
-				<img src="img/logo.png" />
-				<div class="mnu-btn-container">
-					<div class="mnu-btn current">HOME</div>
-					<div class="mnu-btn">TOOLS</div>
-					<div class="mnu-btn" onclick="navigate('settings.html');">SETTINGS</div>
+		<center>
+			<div class="item-panel-container" id="kit-panel">
+				<div class="item-panel" onClick="requestKitInformation(0);">
+					<div class="title-banner" id="legacy-title" >Legacy kit</div>
+					<div class="name-banner">Huntsman</div>
+					<img class="item-img" src="img/items/stone_sword.png" id="pixel" />
 				</div>
-			</div>
-			
-			<div id="comment-wrapper" style="z-index: 1;">
-				<div class="carousel">
-					<a class="carousel-item">
-						<div class="box-comment">
-							<img src="img/users/Mexury.png" id="user"></img>
-							<p>Join our discord!</p>
-							<div class="small-btn" onclick="navigate('https://discord.gg/5bBZC5B');">here</div>
-						</div>
-					</a>
-					<a class="carousel-item">
-						<div class="box-comment">
-							<div id="statuscircle"></div>
-							<p id="status">Gathering Twitch resources...</p>
-							<div id="twitch-btn" class="small-btn" onclick="navigate('https://twitch.tv/devistygg/');">watch</div>
-						</div>
-					</a>
-					<a class="carousel-item">
-						<div class="box-comment">
-							<img src="img/users/Devisty.png" id="user"></img>
-							<p>Follow me on twitter!</p>
-							<div class="small-btn" onclick="navigate('https://twitter.com/devistygg/');">here</div>
-						</div>
-					</a>
+				<div class="item-panel" onClick="requestKitInformation(1);">
+					<div class="title-banner" id="legacy-title" >Legacy kit</div>
+					<div class="name-banner">Werewolf</div>
+					<img class="item-img" src="img/items/raw_beef.png" id="pixel" />
 				</div>
-			</div>
-			
-			<div id="wrapper" style="z-index: 0;">
-				<div id="wrapper-posts">
-					<div class="tip">
-						<p class="post-title">TIP</p>
-						<p class="post-text">When visiting this page on mobile or smaller screens, try sliding the cards above!</p>
-					</div>
-					<div class="post">
-						<p class="post-title">Update v4.01</p>
-						<p class="post-text">This update features the first version of the settings page.
-						</br>You can now choose from 3 different theme colours. The Twitch indicator will be fixed in a later update.</p>
-					</div>
-					<div class="post">
-						<p class="post-title">Update v4.0</p>
-						<p class="post-text">This is the first official v4.0 website update.
-						</br>Full mobile support will be added in later versions.</p>
-					</div>
+				<div class="item-panel" onClick="requestKitInformation(2);">
+					<div class="title-banner" id="legacy-title" >Legacy kit</div>
+					<div class="name-banner">Fisherman</div>
+					<img class="item-img" src="img/items/fishing_rod.png" id="pixel" />
 				</div>
+				<div class="item-panel" onClick="requestKitInformation(3);">
+					<div class="title-banner" id="legacy-title" >Legacy kit</div>
+					<div class="name-banner">Ninja</div>
+					<img class="item-img" src="img/items/feather.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(4);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.4</u></div>
+					<div class="name-banner">Farmer</div>
+					<img class="item-img" src="img/items/diamond_hoe.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(5);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.4</u></div>
+					<div class="name-banner">Batter</div>
+					<img class="item-img" src="img/items/stick.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(6);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.4</u></div>
+					<div class="name-banner">Pyro</div>
+					<img class="item-img" src="img/items/flint_and_steel.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(7);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.5</u></div>
+					<div class="name-banner">Madman</div>
+					<img class="item-img" src="img/items/tnt.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(8);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.6</u></div>
+					<div class="name-banner">Warper</div>
+					<img class="item-img" src="img/items/ender_pearl.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(9);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.6</u></div>
+					<div class="name-banner">Archer</div>
+					<img class="item-img" src="img/items/bow.png" id="pixel" />
+				</div>
+				<div class="item-panel" onClick="requestKitInformation(10);">
+					<div class="title-banner">New kit! &nbsp;&nbsp; <u>v1.7</u></div>
+					<div class="name-banner">Mage</div>
+					<img class="item-img" src="img/items/blaze_rod.png" id="pixel" />
+				</div>
+			</div></br>
+			<div class="kit-information-panel" id="kitInformationPanel">
+				<p>KIT NAME HERE</p>
+				<div class="close-button"><i class="fas fa-times-circle"></i></div>
 			</div>
-		
 		</center>
 	</body>
-	
 </html>
 
-<script src="js/module_applycolorsettings.js"></script>
-<script src="js/module_loader.js"></script>
-<script src="js/twitch/main.js"></script>
 <script>
-$('.carousel').carousel({
-	dist: 0,
-	loop: true,
-	duration: 300
-});
-
-function navigate(url) {
-	window.location.href = url;
+function requestKitInformation(kitid) {
+	var kitInformationPanel = document.getElementById('kitInformationPanel');
+	var kitPanel = document.getElementById('kit-panel');
+	
+	kitPanel.style.display = 'none';
+	kitInformationPanel.style.display = 'inline-grid';
+	
+	if (kitid === 0) {
+		kitInformationPanel.innerHTML = `
+			<p>HUNTSMAN</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 90</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapons</div>
+						<div class="item-show-box">
+							<img src="img/items/stone_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/bow.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/arrow.png" id="pixel" />
+							<p id="item-count">8</p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				<small>This kit has no abilities</small>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 1) {
+		kitInformationPanel.innerHTML = `
+			<p>WEREWOLF</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 80</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/stone_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/paper.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Scroll of Blood Lust</small></br>
+						<small style="letter-spacing: 2.3px;">Grants Strength and speed for 15 seconds.</small></br>
+						<small style="letter-spacing: 1.9px; color: #d43131; text-shadow: 0 0;">Can only be activated during full moon</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 60s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 2) {
+		kitInformationPanel.innerHTML = `
+			<p>FISHERMAN</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 80</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapons</div>
+						<div class="item-show-box">
+							<img src="img/items/wood_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/fishing_rod.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				<small>This kit has no abilities</small>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 3) {
+		kitInformationPanel.innerHTML = `
+			<p>NINJA</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 70</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/wood_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/black/leather_helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/black/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/black/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/black/leather_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/paper.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Scroll of Vanishing</small></br>
+						<small style="letter-spacing: 2.3px;">Turns you completely invisible for 8 seconds.</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 30s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 4) {
+		kitInformationPanel.innerHTML = `
+			<p>FARMER</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 80</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/diamond_hoe.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/seeds_wheat.png" id="pixel" />
+							<p id="item-count">2</p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Explosive Seeds</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click to throw.</small></br>
+						<small style="letter-spacing: 2.3px;">When picked up by enemies, they explode.</small></br>
+						<small style="letter-spacing: 1.9px;">Spawn with 2, Regen 2, Max 4 dropped.</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 2s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 5) {
+		kitInformationPanel.innerHTML = `
+			<p>BATTER</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 90</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/wood_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/iron armor/iron_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/stick.png" id="pixel" />
+							<p id="item-count">KB</p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				<small>This kit has no abilities</small>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 6) {
+		kitInformationPanel.innerHTML = `
+			<p>PYRO</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 70</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/flint_and_steel.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Torch it up</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click pyro's lighter to light an enemy on fire for 5s.</small>
+						<small style="letter-spacing: 2.3px;">Only 3 uses.</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 5s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 7) {
+		kitInformationPanel.innerHTML = `
+			<p>MADMAN</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 80</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/iron_axe.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/red/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/red/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/tnt.png" id="pixel" />
+							<p id="item-count">2</p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Instaboom</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click TNT to launch yourself and enemies.</small></br>
+						<small style="letter-spacing: 2.3px;">Spawn with 2, regen 1.</small></br>
+						<small style="letter-spacing: 2.3px;">Only deals fall damage to yourself.</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 1s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 8) {
+		kitInformationPanel.innerHTML = `
+			<p>WARPER</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 70</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/iron_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/purple/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/ender_pearl.png" id="pixel" />
+							<p id="item-count">3</p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Warped</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click a Warper Pearl to switch places with an enemy.</small></br>
+						<small style="letter-spacing: 2.3px;">Spawn with 3, regen 1.</small></br>
+						<small style="letter-spacing: 2.3px;">Range: 50m</small></br>
+						<small style="letter-spacing: 1.9px;">Cooldown: 4s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 9) {
+		kitInformationPanel.innerHTML = `
+			<p>ARCHER</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 60</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapons</div>
+						<div class="item-show-box">
+							<img src="img/items/wood_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/bow.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/empty armor/helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/default/leather_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/arrow.png" id="pixel" />
+							<p id="item-count">24</p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				<small>This kit has no abilities</small>
+				</div>
+			</div>
+		`
+	}
+	if (kitid === 10) {
+		kitInformationPanel.innerHTML = `
+			<p>MAGE</p>
+			<div class="close-button" onClick="closeKitInformation();"><i class="fas fa-times-circle"></i></div>
+			<div class="lore-box">
+				<p><i class="fas fa-heart"></i> 200 &nbsp;&nbsp;&nbsp; <i class="fas fa-shield-alt"></i> 110</p>
+				</br>
+				<div class="item-content-box">
+					<div class="item-content-panel">
+						<div class="content-title">Weapon</div>
+						<div class="item-show-box">
+							<img src="img/items/wood_sword.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Armor</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_helmet.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/purple/leather_chestplate.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/leather armor/purple/leather_leggings.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+						<div class="item-show-box">
+							<img src="img/items/chainmail armor/chainmail_boots.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+					<div class="item-content-panel">
+						<div class="content-title">Items</div>
+						<div class="item-show-box">
+							<img src="img/items/blaze_rod.png" id="pixel" />
+							<p id="item-count"></p>
+						</div>
+					</div>
+				</div>
+				<div class="item-content-box-abilities">
+				Abilities</br>
+				
+				<ul>
+					<li><small>Magic touch</small></br>
+						<small style="letter-spacing: 2.3px;">Left-click Mage's Wand to cycle through spells.</small>
+					</li>
+					<li><small>Thunderstrike</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click Mage's Wand to cast.</small></br>
+						<small style="letter-spacing: 2.3px;">Summons 16 Lightning bolts that hurt enemies.</small></br>
+						<small style="letter-spacing: 2.3px;">Costs: 200 mana</small></br>
+						<small style="letter-spacing: 2.3px;">Cooldown: 10s</small>
+					</li>
+					<li><small>Pulsewave</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click Mage's Wand to cast.</small></br>
+						<small style="letter-spacing: 2.3px;">Launches you and enemies in a 5m radius.</small></br>
+						<small style="letter-spacing: 2.3px;">Costs: 150 mana</small></br>
+						<small style="letter-spacing: 2.3px;">Cooldown: 10s</small>
+					</li>
+					<li><small>Repulse</small></br>
+						<small style="letter-spacing: 2.3px;">Right-click Mage's Wand to cast.</small></br>
+						<small style="letter-spacing: 2.3px;">Launches you.</small></br>
+						<small style="letter-spacing: 2.3px;">Doesn't deal fall damage.</small></br>
+						<small style="letter-spacing: 2.3px;">Costs: 40 mana</small></br>
+						<small style="letter-spacing: 2.3px;">Cooldown: 10s</small>
+					</li>
+				</ul>
+				</div>
+			</div>
+		`
+	}
 }
-window.onload = getColorMode();
+
+function closeKitInformation() {
+	var kitInformationPanel = document.getElementById('kitInformationPanel');
+	var kitPanel = document.getElementById('kit-panel');
+	
+	kitInformationPanel.style.display = 'none';
+	kitPanel.style.display = 'inline-grid';
+}
 </script>
