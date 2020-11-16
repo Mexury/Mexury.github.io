@@ -2,103 +2,41 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Montserrat', sans-serif;
+	background: #191919;
 }
 
-.wrapper {
-	width: 800px;
-	display: block;
+section.s_header {
+	background: #333333;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	min-height: 104px;
 }
 
-.title {
-	font-weight: 800;
-	font-size: 26px;
+section.s_header img#logo_big {
+	height: 100px;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
 }
 
-.title-small {
-	font-weight: 500;
-	font-size: 17px;
-	
-	margin-bottom: 90px;
+section.s_header_buttons {
+	margin-top: -15px;
 }
 
-a {
-	color: #1F4E79;
-}
-
-#header {
-	margin-top: 80px;
-	margin-bottom: 80px;
-}
-
-.rule-title {
-	font-weight: 800;
-	font-size: 20px;
-	text-align: left;
-}
-
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.rule-title ul {
-	list-style: circle inside;
-}
-
-ul li {
+section.s_header_buttons img.s_header_button {
 	display: inline-block;
-	font-weight: normal;
-	font-size: 17px;
-	margin-top: 4px;
-	margin-bottom: 4px;
+	vertical-align: middle;
+	height: 30px;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	margin: 30px;
+	margin-top: 0px;
+	cursor: pointer;
 }
 
-lvl {
-	font-family: 'Roboto', sans-serif;
-	width: 40px;
-	background: #CC0000;
-	color: #ffffff;
-	padding: 2px;
-	border-radius: 1px;
-	margin-right: 10px;
-	font-weight: 900;
-	letter-spacing: 1px;
-	display: inline-block;
-	text-align: center;
-}
-
-ji {
-	margin-left: 53.5px;
-}
-
-jic {
-	margin-left: 53.5px;
-	font-size: 12px;
-	color: #1F4E79;
-}
-
-div.panel.red {
-	background: #CC0000;
-	color: #ffffff;
-	padding: 20px;
-	text-align: left;
-	font-weight: 700;
-	font-size: 15px;
-}
-
-div.panel.blue {
-	background: #5B9BD5;
-	color: #ffffff;
-	padding: 20px;
-	text-align: left;
-	font-weight: 700;
-	font-size: 15px;
-}
-
-div.panel.blue lvl {
-	display: inline-block;
-	width: 100px;
-	text-align: left;
-	background: transparent;
+section.s_header_buttons img.s_header_button.active {
+	cursor: default;
 }
