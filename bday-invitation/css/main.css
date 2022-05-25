@@ -1,0 +1,99 @@
+:root {
+    --background: #1A1D20;
+    --foreground: #F4F6F9;
+
+    --tint-dark: #282C30;
+    --tint-light: #4E5863;
+    
+    --yellow: #FFC400;
+
+    --accent: #6116FFFF;
+    --accent-transparent: #6116FF33;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    color: var(--foreground);
+}
+
+html, body {
+    height: calc(100vh - (1.25rem * 4));
+    width: calc(100vw - (1.25rem * 4));
+
+    background-color: var(--background);
+    margin: 1.25rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    overflow: hidden;
+    cursor: none;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0px;
+}
+
+strong {
+    font-size: 100%;
+    -webkit-text-stroke: .02em black;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 225px;
+
+    filter:
+        drop-shadow(0px 3px 0px #000000)
+        drop-shadow(0px 4px 0px #000000)
+        drop-shadow(0px 5px 0px #000000)
+        drop-shadow(0px 6px 0px #000000);
+
+    transition: all 200ms ease-in-out;
+}
+
+.huge {
+    position: absolute;
+    user-select: none;
+    transform: scale(0);
+    /* height: 0; */
+    animation: pop-up 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 100ms;
+}
+
+.huge.exit {
+    transform: scale(1);
+    animation: exit 1000ms cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+}
+
+@keyframes pop-up {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes exit {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
