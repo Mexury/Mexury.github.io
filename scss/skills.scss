@@ -1,0 +1,55 @@
+$skill-list: (
+    html: "html",
+    css: "css",
+    javascript: "javascript",
+    php: "php",
+    nodejs: "nodejs",
+    reactjs: "reactjs"
+);
+
+.skill-wrapper {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    min-width: 100%;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+.skill {
+    height: 90px;
+    width: 100px;
+    cursor: pointer;
+    transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:not(.active):hover {
+        transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: scale(1.1);
+    }
+
+    &.active {
+        opacity: .5;
+        cursor: default;
+    }
+
+    &:nth-of-type(2n) {
+        transform: translate(0, 1em);
+        &:not(.active):hover {
+            transform: translate(0, 1em) scale(1.1);
+        }
+    }
+    &:nth-of-type(4n) {
+        transform: translate(0, 0);
+        &:not(.active):hover {
+            transform: translate(0, 0) scale(1.1);
+        }
+    }
+}
+
+@each $type, $skill in $skill-list {
+    .skill.#{$type} {
+        background-image: url("../content/svg/blobs/skills/#{$skill}.svg");
+        background-position: 0 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}

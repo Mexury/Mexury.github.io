@@ -1,0 +1,427 @@
+@use "flex.scss";
+@use "skills.scss";
+
+$background: #1A1D20;
+$foreground: #F4F6F9;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: $foreground;
+    scroll-behavior: smooth;
+    // scroll-snap-type: y proximity;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background: $background;
+    // overflow: hidden;
+}
+
+@keyframes wave-back {
+    from {
+        transform: scaleX(-1.2) translateY(100px) rotate(2deg);
+    }
+    to {
+        transform: scaleX(-1.2) translateY(70px) rotate(-2deg);
+    }
+}
+@keyframes wave-front {
+    from {
+        transform: scaleX(1.2) translateY(110px) rotate(2deg);
+    }
+    to {
+        transform: scaleX(1.2) translateY(80px) rotate(-2deg);
+    }
+}
+
+#wave-background {
+    background-image: url("../content/svg/wave-background.svg");
+    z-index: -10;
+    animation: wave-back 2823ms ease-in-out forwards infinite alternate;
+    // transition: transform 200ms ease-in-out;
+}
+#wave-foreground {
+    background-image: url("../content/svg/wave-foreground.svg");
+    z-index: 10;
+    animation: wave-front 2000ms ease-in-out forwards infinite alternate-reverse;
+    // transition: transform 200ms ease-in-out;
+    // opacity: .8;
+    // bottom: -2em;
+}
+#wave-foreground, #wave-background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    transform-origin: 50%;
+    pointer-events: none;
+}
+
+[section] {
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+[section] > div {
+    flex: 1 1 30%;
+}
+// section.gap-big {
+//     padding: 4em;
+// }
+
+h1 { font-size: 7.2rem; }
+h2 { font-size: 6.1rem; }
+h3 { font-size: 5.0rem; }
+h4 { font-size: 3.9rem; }
+h5 { font-size: 2.8rem; }
+h6 { font-size: 1.7rem; }
+p { font-size: 1.5rem; }
+
+u {
+    text-decoration: none;
+    position: relative;
+}
+
+u::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    transform: translate(0, -.25em);
+    background-image: url("../content/svg/underline.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    z-index: -1;
+}
+
+.name {
+    text-align: right;
+    font-size: 2.1em;
+    position: absolute;
+    bottom: -2em;
+    right: 0;
+    font-weight: bold;
+    transform: rotateZ(-8deg);
+    transition: all 300ms ease;
+    -webkit-text-stroke: 2px transparent;
+    pointer-events: none;
+}
+
+@keyframes wave {
+    from {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        // opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+#spanified span {
+    display: inline-block;
+    animation: fade-in-up 500ms ease-in-out forwards;
+    transition: transform 500ms ease-in-out;
+    opacity: 0;
+}
+
+#spanified.hidden {
+    opacity: 0;
+}
+
+// #spanified:not(.wave) span {
+//     opacity: 0;
+// }
+
+#spanified.wave span {
+    animation: wave 500ms ease-in-out infinite alternate;
+    // animation-play-state: paused;
+}
+
+@for $i from 1 through 500 {
+    #spanified span:nth-of-type(#{$i}) {
+        animation-delay: #{100 + (($i - 1) * 50)}ms;
+    }
+}
+
+.blob.picture {
+    background-image: url("../content/picture.png");
+    background-size: 150%;
+    background-position: -50px 0;
+    background-repeat: no-repeat;
+    clip-path: url(#blob-picture);
+    width: 297px;
+    aspect-ratio: .8/1;
+    background-color: #bada550f;
+    transform: translate(-1em, 0);
+    cursor: pointer;
+    transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin-right: auto;
+
+    &:hover {
+        transform: translate(-1em, 0) scale(1.3) rotateZ(-5deg);
+        transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &:hover + #spanified.wave span {
+        // transform: translate(-.5em, -6em) scale(1.5) rotateZ(-4deg);
+        // transition: all 500ms ease;
+        // -webkit-text-stroke: 2px $background;
+        animation-play-state: running;
+    }
+}
+
+.this-is-me {
+    margin-right: 1.2em;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        left: 100%;
+        margin-left: .3em;
+        margin-bottom: -.2em;
+        height: 200%;
+        width: 400%;
+        background-image: url("../content/svg/this_is_me_arrow.svg");
+        background-size: 100%;
+        background-position: 0;
+        background-repeat: no-repeat;
+    }
+}
+
+svg.clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+}
+
+.relative {
+    position: relative;
+}
+
+.menu {
+    position: fixed;
+    z-index: 15;
+    top: 50%;
+    left: 0;
+    background-image: url("../content/svg/blobs/menu.svg");
+    background-size: 100% 100%;
+    background-position: 0;
+    background-repeat: no-repeat;
+    border-radius: .25em;
+    margin: 2em;
+    padding: 2em;
+    transform: translate(0, -50%);
+    height: 300px;
+    font-size: 1.1em;
+    transition: all 200ms ease-in-out;
+    pointer-events: painted;
+
+    &:hover {
+        transform: translate(0, -50%) scale(1.04) rotateZ(-3deg);
+        transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    ul {
+        all: unset;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: .8em;
+        font-weight: bold;
+        transform: translate(0, 20px);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            bottom: -.25em;
+            left: 0;
+            content: "";
+            width: 0px;
+            height: .25em;
+            background: $foreground;
+            z-index: -1;
+            border-radius: 10px;
+            transform-origin: 0 50%;
+            transition: all 200ms ease-in-out;
+        }
+
+        &:hover::before, &.active::before {
+            width: 100%;
+            transition: all 200ms ease-in-out;
+        }
+    }
+}
+
+.fish {
+    position: fixed;
+    bottom: 36em;
+    right: 60%;
+    offset-path: path("M 0 775 Q 400 0 800 775 ");
+    animation: move 2000ms reverse ease-in-out forwards;
+    animation-delay: 20s;
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    height: 100px;
+    width: 200px;
+    z-index: 5;
+    // transform: rotateZ(180deg);
+    // transform: rotateY(180deg);
+    transition: all 100ms ease-in-out;
+    opacity: 0;
+    background-image: url("../content/fish.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+@keyframes move {
+    0% {
+        offset-distance: 0%;
+        opacity: 1;
+    }
+    100% {
+        offset-distance: 100%;
+        opacity: 1;
+        
+    }
+}
+
+@keyframes move-after {
+    35% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+}
+
+small {
+    background-color: $foreground;
+    padding: .25em 1em;
+    border-radius: .25em;
+    margin-bottom: 1em;
+    display: inline-block;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+small[success] {
+    background: hsla(143, 100%, 53%, 0.255);
+    border-left: 8px solid hsl(143, 100%, 53%);
+    color: hsl(143, 100%, 53%);
+}
+
+small[warning] {
+    background: hsla(27, 100%, 53%, 0.255);
+    border-left: 8px solid hsl(27, 100%, 53%);
+    color: hsl(27, 100%, 53%);
+}
+
+small[error] {
+    background: #ff0f2f41;
+    border-left: 8px solid #ff0f2f;
+    color: #ff0f2f;
+}
+
+.project-wrapper {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start flex-start;
+    margin-top: 3em;
+}
+
+[fade-in] {
+    opacity: 0;
+    animation: fade-in-anim 400ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform-origin: 0 50%;
+}
+
+@keyframes fade-in-anim {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.project {
+    flex: 0 1 auto;
+    width: clamp(150px, 23%, 300px);
+    color: $foreground;
+
+    &:nth-of-type(2n) {
+        transform: translate(0, 1em);
+    }
+    &:nth-of-type(4n) {
+        transform: translate(0, 0);
+    }
+}
+
+.project svg {
+    cursor: pointer;
+    pointer-events: visibleFill;
+
+    transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+        transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: scale(1.1);
+    }
+}
+
+path {
+    fill: currentColor;
+}

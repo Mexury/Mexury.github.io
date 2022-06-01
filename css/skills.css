@@ -1,0 +1,79 @@
+.skill-wrapper {
+  margin-top: 2em;
+  margin-bottom: 4em;
+  min-width: 100%;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.skill {
+  height: 90px;
+  width: 100px;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.skill:not(.active):hover {
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(1.1);
+}
+.skill.active {
+  opacity: 0.5;
+  cursor: default;
+}
+.skill:nth-of-type(2n) {
+  transform: translate(0, 1em);
+}
+.skill:nth-of-type(2n):not(.active):hover {
+  transform: translate(0, 1em) scale(1.1);
+}
+.skill:nth-of-type(4n) {
+  transform: translate(0, 0);
+}
+.skill:nth-of-type(4n):not(.active):hover {
+  transform: translate(0, 0) scale(1.1);
+}
+
+.skill.html {
+  background-image: url("../content/svg/blobs/skills/html.svg");
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.skill.css {
+  background-image: url("../content/svg/blobs/skills/css.svg");
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.skill.javascript {
+  background-image: url("../content/svg/blobs/skills/javascript.svg");
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.skill.php {
+  background-image: url("../content/svg/blobs/skills/php.svg");
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.skill.nodejs {
+  background-image: url("../content/svg/blobs/skills/nodejs.svg");
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.skill.reactjs {
+  background-image: url("../content/svg/blobs/skills/reactjs.svg");
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=skills.css.map */

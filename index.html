@@ -1,14 +1,295 @@
+<!-- <?php
+
+    // Requirements
+    require("php/classes/Database.php");
+
+    $database = new Database("localhost", "root", "", "83350_myportfolio");
+    $database->Open();
+
+    // Code here
+
+    $database->Close();
+
+?> -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-		<meta name="description" content="">
-		<link rel="stylesheet" href="css/main.css">
-		<title>UNDER CONSTRUCTION</title>
-	</head>
-	<body>
-		<div class="text">UNDER CONSTRUCTION</div>
-	</body>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="css/main.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="fish"></div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#about_me">About me 🤓</a></li>
+                <li><a href="#my_skills">My skills 💪</a></li>
+                <li><a href="#my_projects">My projects 📂</a></li>
+                <li><a href="#contact_me">Contact me 🤙</a></li>
+            </ul>
+        </nav>
+        
+        <div section class="flex stretch-y dir-x wrap center gap-xl between" id="about_me">
+            <div class="flex dir-x wrap content-fill">
+                <h4 style="margin-bottom: 2rem"><u class="this-is-me">This</u> is me🤓</h4>
+                <p id="spanified">I'm a full-stack web developer.</p>
+                <p id="spanified" delay="1400"><span id="age">18</span> years old.</p>
+                <p id="spanified" delay="2100">I love a challenge.</p>
+            </div>
+            <div class="flex dir-y relative">
+                <div class="blob picture"></div>
+                <p class="name">Albert Lourensen</p>
+            </div>
+        </div>
+        <div section class="flex stretch-y dir-x wrap center gap-xl between" id="my_hobbies">
+            <div class="flex dir-x wrap content-fill">
+                <h4 style="margin-bottom: 2rem">My hobbies 🕹️</h4>
+                <p fade-in>🎮 <span id="spanified">Gaming<span></p>
+                <p fade-in>🎯 <span id="spanified" delay="600">Organising game-nights between friends<span></p>
+                <p fade-in>🧊 <span id="spanified" delay="2600">Chilling with friends<span></p>
+                <p fade-in>🍿 <span id="spanified" delay="3900">Watching movies<span></p>
+                <p fade-in>✏️ <span id="spanified" delay="4900">Drawing<span></p>
+                <p id="spanified" > </p>
+                <p id="spanified" delay="2600"> </p>
+                <p id="spanified" delay="2600"> </p>
+            </div>
+        </div>
+
+        <div section class="flex stretch-y dir-x wrap center gap-xl" id="my_skills">
+            <div class="flex dir-x wrap content-fill">
+                <h4 style="margin-bottom: 2rem">My skills 💪</h4>
+                <p id="spanified">I've been (web) developing ever since</p>
+                <p id="spanified" delay="1600">I was 10 years old.</p>
+                <div class="skill-wrapper">
+                    <div class="skill html"></div>
+                    <div class="skill css"></div>
+                    <div class="skill javascript"></div>
+                    <div class="skill php"></div>
+                    <div class="skill nodejs"></div>
+                    <div class="skill reactjs"></div>
+                </div>
+                <div id="skill-info"></div>
+            </div>
+        </div>
+
+        <div section class="flex stretch-y dir-x wrap center gap-xl" id="my_projects">
+            <div class="flex dir-y">
+                <h4 style="margin-bottom: 2rem">My projects 📂</h4>
+                <p id="spanified">What I'm proud of.</p>
+                <div class="project-wrapper">
+                    <div class="project"></div>
+                    <div class="project"></div>
+                    <div class="project"></div>
+                    <div class="project"></div>
+                </div>
+            </div>
+        </div>
+
+        <div section class="flex stretch-y dir-x wrap center gap-xl" id="contact_me">
+            <div class="flex dir-x wrap content-fill">
+                <h4 style="margin-bottom: 2rem">Contact me 🤙</h4>
+            </div>
+        </div>
+
+        <div id="wave-foreground"></div>
+        <div id="wave-background"></div>
+        
+        <svg class="clip">
+            <defs>
+                <clipPath id="blob-picture">
+                    <path d="M117.1-167.4c64.69,0,112.5,44.29,112.5,108.98,0,35,30.8,170.7,0,215.324-26.255,38.046-107.616,44.49-172.259,12.3s-78.659-45.262-102.828-112.5S-39.842-60.249-20.006-81.271C1.307-103.857,83.525-167.4,117.1-167.4Z" transform="translate(54.524 167.4)"/>
+                </clipPath>
+            </defs>
+        </svg>
+
+    </body>
 </html>
+
+<script>
+
+    let progress = 0;
+    setInterval(() => {
+        progress += .5;
+        document.querySelector("#wave-background").style.backgroundPositionX = `${progress-79}px`;
+        document.querySelector("#wave-foreground").style.backgroundPositionX = `${progress}px`;
+    }, 10);
+
+    document.querySelector("#age").textContent = new Date(Date.now() - new Date("06-05-2003")).getFullYear() - 1970;
+
+    let spanify = (elem) => {
+        let text = elem.textContent;
+        let temp = "";
+        for (let i = 0; i < text.length; i++) {
+            let txt = text[i];
+            if (txt.trim().length <= 0) {
+                temp += `${txt}`;
+            } else {
+                temp += `<span>${txt}</span>`;
+            }
+        }
+
+        elem.innerHTML = temp;
+    }
+
+    document.querySelectorAll("#spanified").forEach(elem => {
+        let interval = setInterval(() => {
+
+            elem.classList.toggle("hidden", true);
+            if (isInViewport(elem) || scrolledPast(elem)) {
+                if (elem.hasAttribute("delay")) {
+                    setTimeout(() => {
+                        spanify(elem);
+                        elem.classList.toggle("hidden", false);
+                    }, parseInt(elem.getAttribute("delay")));
+                } else {
+                    spanify(elem);
+                    elem.classList.toggle("hidden", false);
+                }
+
+                clearInterval(interval);                
+            }
+        }, 10);
+    });
+
+    let isInViewport = (element) => {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top+(rect.height/2) >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    let scrolledPast = (elem) => {
+        const rect = elem.getBoundingClientRect();
+        let ret = rect.bottom <= document.body.scrollTop;
+        return ret;
+    }
+
+    let skills = {
+        html: document.querySelector(".skill.html"),
+        css: document.querySelector(".skill.css"),
+        javascript: document.querySelector(".skill.javascript"),
+        php: document.querySelector(".skill.php"),
+        nodejs: document.querySelector(".skill.nodejs"),
+        reactjs: document.querySelector(".skill.reactjs")
+    };
+
+    skills.html.addEventListener("click", () => { selectSkill("html") });
+    skills.css.addEventListener("click", () => { selectSkill("css") });
+    skills.javascript.addEventListener("click", () => { selectSkill("javascript") });
+    skills.php.addEventListener("click", () => { selectSkill("php") });
+    skills.nodejs.addEventListener("click", () => { selectSkill("nodejs") });
+    skills.reactjs.addEventListener("click", () => { selectSkill("reactjs") });
+
+    let selectedSkill = "";
+
+    let selectSkill = (type) => {
+        let skill_info = document.querySelector("#skill-info");
+        let content = ``;
+        let shouldSet = true;
+
+        Object.values(skills).forEach(element => {
+            element.classList.toggle("active", false);
+        });
+
+        skills[type].classList.toggle("active", true);
+
+        switch(type) {
+            default:
+                shouldSet = false;
+                break;
+            case "html":
+            case "css":
+            case "javascript":
+                if (selectedSkill == "html" ||
+                    selectedSkill == "css" ||
+                    selectedSkill == "javascript" ) {
+                    shouldSet = false;
+                }
+
+                skills.html.classList.toggle("active", true);
+                skills.css.classList.toggle("active", true);
+                skills.javascript.classList.toggle("active", true);
+
+                content = `<small success>I am very experienced in HTML and CSS.</small><br>`;
+                content += `Using HTML, CSS and JavaScript,<br>`;
+                content += `I know how to make stunning and functional websites.`;
+                break;
+            case "php":
+                content = `<small warning>I am confident in my PHP abilities, but I much prefer NodeJS.</small><br>`;
+                content += `I've only started working with php very recently.<br>`;
+                content += `I can make use of databases and make authentication-based websites.`;
+                break;
+            case "nodejs":
+                content = `<small warning>I am currently still learning NodeJS.</small><br>`;
+                content += `I can make fast websites with a NodeJS back-end.`;
+                break;
+            case "reactjs":
+                content = `<small warning>I am currently still learning ReactJS.</small><br>`;
+                content += `I have made a few websites using ReactJS,<br>`;
+                content += `but I'm too new to call myself an expert on this framework.`;
+                break;
+        }
+        if (selectedSkill == type) shouldSet = false;
+        selectedSkill = type;
+
+        if (shouldSet) skill_info.innerHTML = `<p fade-in>${content}</p>`;
+    }
+
+    let projects = document.querySelectorAll(".project");
+    let last_project_id = 0;
+
+    projects.forEach(project => {
+
+        let index = Math.floor(Math.random() * 4)+1;
+        if (last_project_id === index) {
+            index = Math.max(Math.min(index+1, 5), 1);
+            if (index >= 5) { index = 1; }
+        }
+
+        last_project_id = index;
+
+        fetch(`content/svg/blobs/projects/${index}.svg`)
+        .then(response => response.text())
+        .then(data => {
+            project.innerHTML = data;
+        });
+
+    });
+    
+    let lastSection;
+    let sections = document.querySelectorAll("div[section]");
+
+    
+
+    let sectionsScrollCheck = () => {
+        sections.forEach(elem => {
+            if (isInViewport(elem)) {
+                if (lastSection != elem) {
+                    lastSection = elem;
+                }
+            }
+        });
+
+        document.querySelectorAll(".menu a").forEach(elem => {
+            let href = elem.href.split("#")[1];
+            if (elem.parentElement.classList.contains("active") && href != lastSection.id) {
+                elem.parentElement.classList.toggle("active", false);
+            }
+            if (lastSection.id == "my_hobbies") {
+                lastSection.id = "about_me";
+            }
+            if (href == `${lastSection.id}`) {
+                elem.parentElement.classList.toggle("active", true);
+            }
+        });
+    }
+
+    window.onscroll = () => { sectionsScrollCheck() };
+    window.onscroll();
+</script>
