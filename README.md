@@ -1,2 +1,2 @@
 # Mexury.github.io
-ch_lower
+ch_lowe
