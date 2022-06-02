@@ -1,3 +1,0 @@
-RewriteEngine On
-rewritecond %{http_host} ^agenda.albertlourensen.com
-rewriteRule ^(.*) https://www.youtube.com/watch?v=xvFZjo5PgG0 [R=301,L]
