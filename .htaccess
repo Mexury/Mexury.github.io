@@ -1,3 +1,4 @@
 RewriteEngine On
 rewritecond %{http_host} ^agenda.albertlourensen.com
-rewriteRule ^(.*) https://calendar.google.com/calendar/u/0/embed?&wkst=2&bgcolor=%23ffffff&ctz=Europe/Amsterdam&showTitle=0&showNav=1&showPrint=1&showTabs=0&mode=AGENDA&showTz=1&showCalendars=0&src=bmwubWV4dXJ5QGdtYWlsLmNvbQ&color=%23039BE5 [R=301,L]
+<!-- rewriteRule ^(.*) https://calendar.google.com/calendar/u/0/embed?&wkst=2&bgcolor=%23ffffff&ctz=Europe/Amsterdam&showTitle=0&showNav=1&showPrint=1&showTabs=0&mode=AGENDA&showTz=1&showCalendars=0&src=bmwubWV4dXJ5QGdtYWlsLmNvbQ&color=%23039BE5 [R=301,L] -->
+rewriteRule ^(.*) https://www.youtube.com/watch?v=xvFZjo5PgG0 [R=301,L]
